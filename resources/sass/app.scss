@@ -1,1 +1,14 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.card-login{
+    height: 90vh;
+    position: relative;
+    background-color:rgba(200, 200, 200, 0.5);
+}
