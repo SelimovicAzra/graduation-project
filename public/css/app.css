@@ -11100,7 +11100,8 @@ a.text-dark:focus {
   }
 }
 
-.card-login {
+.card-login,
+.card-signup {
   height: 90vh;
   position: relative;
   background-color: rgba(200, 200, 200, 0.5);
