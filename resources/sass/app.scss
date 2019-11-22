@@ -12,3 +12,86 @@
     position: relative;
     background-color:rgba(200, 200, 200, 0.5);
 }
+
+#app{
+    //display: flex;
+}
+body{
+    font-family: 'Lato', sans-serif !important;
+    background:#000e23;
+}
+li {
+    list-style-type: none;
+}
+    .navbar-laravel {
+        //background-color: rgba(223, 236, 245, 0.2)!important;
+        background-color: transparent!important;
+    }
+
+    .navbar {
+        //padding: 0.2rem 1rem !important;
+        background-color: rgba(	158, 199, 228, 0.3)!important;
+    }
+    .nav-link{
+        //color:white !important;
+        padding-top:5px;
+    }
+    .nav-link:hover{
+        background-color: #20a8d8;
+        color: #fff;
+        text-decoration: none;}
+    ul, li {
+        list-style-type: none;
+    }
+    .navbar-brand{
+        font-family: 'Lato', sans-serif;
+        font-style: italic;
+        font-weight: bolder;
+    }
+    .nav-title{
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size:11px;
+        color:#c2cfd6;
+        margin-left: 1.5rem;
+    }
+    .nav-item{
+        padding-left: 2rem;
+    }
+    .nav-link i{
+        padding-right:10px;
+    }
+    #sidebar-collapse{
+        margin-right:890px;
+        border: 1px solid #DCDCDC;
+    }
+    #sidebar{
+        max-width:250px;
+        flex-basis:auto;
+        background-color: #000e23;
+        min-height: 100vh;
+        font-size: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin-right: 45px;
+    }
+    #sidebar-nav{
+        margin-top:65px;
+    }
+    #sidebar.hide-sidebar{
+        margin-left: -250px !important;
+        transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, -ms-flex 0.25s;
+    }
+    //.navbar-white{
+    //    color:white !important;
+    //}
+    /* Content Wrapper Styles */
+    //#content{
+    //    //display: flex;
+    //    flex-direction: row;
+    //    flex-grow: 1;
+    //    margin: 65px 20px 20px 0;
+    //    transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, -ms-flex 0.25s;
+    //}
+//}

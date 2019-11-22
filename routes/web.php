@@ -15,6 +15,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::group(['namespace' => 'Cms'], function () {
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Auth::routes(['verify' => true]);
+});
+
+Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+});
+
+
+Route::group(['namespace' => 'Cms', 'middleware' => 'auth'], function () {
+
+    Route::get('/users/raw', 'UserController@raw')->name('user.raw');
+
+    Route::get('/cities/raw', 'CityController@raw')->name('city.raw');
+    Route::get('/countries/raw', 'CountryController@raw')->name('country.raw');
+
+
+    //search functions
+    Route::get('/countries/search', 'CountryController@search')->name('country.search');
+    Route::get('/cities/search', 'CityController@search')->name('city.search');
+
+    Route::resources([
+
+        'cities' => 'CityController',
+        'countries' => 'CountryController',
+
+
+    ]);
+
+});

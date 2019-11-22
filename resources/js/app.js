@@ -20,6 +20,21 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//item
+Vue.component('item-index', require('./components/Item/ItemIndex').default);
+Vue.component('item-form', require('./components/Item/ItemForm').default);
+Vue.component('item-details', require('./components/Item/ItemDetails').default);
+//country
+Vue.component('country-details', require('./components/Country/CountryDetails').default);
+Vue.component('country-index', require('./components/Country/CountryIndex').default);
+//city
+Vue.component('city-details', require('./components/City/CityDetails').default);
+Vue.component('city-index', require('./components/City/CityIndex').default);
+//category
+Vue.component('category-index', require('./components/Category/CategoryIndex').default);
+Vue.component('category-form', require('./components/Category/CategoryForm').default);
+Vue.component('category-details', require('./components/Category/CategoryDetails').default);
+//donation
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
