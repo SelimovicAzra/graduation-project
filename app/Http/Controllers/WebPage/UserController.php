@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Cms\Controllers;
+namespace App\Http\Controllers\WebPage;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
@@ -15,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('web-page.pages.user.edit');
     }
 
     /**
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -56,10 +57,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, User $user)
     {
-        //
+//        $city = $user->city;
+//        $image = $user->getMedia('user-avatars')->first() ? $user->getMedia('user-avatars')->first()->getUrl() : '';
+        return view('web-page.pages.user.edit')
+            ->withUser($user);
     }
+
+
+
 
     /**
      * Update the specified resource in storage.

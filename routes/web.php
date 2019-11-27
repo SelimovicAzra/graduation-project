@@ -22,13 +22,21 @@ Route::group(['namespace' => 'Cms'], function () {
 
 Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile{user}', 'UserController@edit')->name('profile');
+    Route::resources([
+
+//        'users' => 'UserController',
+
+
+
+    ]);
 
 });
 
 
 Route::group(['namespace' => 'Cms', 'middleware' => 'auth'], function () {
 
-    Route::get('/users/raw', 'UserController@raw')->name('user.raw');
+//    Route::get('/users/raw', 'UserController@raw')->name('user.raw');
 
     Route::get('/cities/raw', 'CityController@raw')->name('city.raw');
     Route::get('/countries/raw', 'CountryController@raw')->name('country.raw');
@@ -42,6 +50,7 @@ Route::group(['namespace' => 'Cms', 'middleware' => 'auth'], function () {
 
         'cities' => 'CityController',
         'countries' => 'CountryController',
+//        'users'=>'UserController'
 
 
     ]);

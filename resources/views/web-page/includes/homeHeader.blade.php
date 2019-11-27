@@ -6,15 +6,17 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <img class="nav-logo" src="/images/logo.png">
+        <p class="goodToShareNav">Good2Share</p>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('home')}}">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="{{route('profile',auth()->user()->id)}}">PROFILE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My Donations</a>
+                <a class="nav-link" href="#">MY DONATIONS</a>
             </li>
 
         </ul>
@@ -28,10 +30,10 @@
                 </li>
             @endif
         @else
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown nav-item-logout">
                 <a id="navbarDropdown" class="nav-link-header dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ __('Logout') }} <span class="caret"></span>
+                    {{ Auth::user()->first_name }} <span class="caret"></span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

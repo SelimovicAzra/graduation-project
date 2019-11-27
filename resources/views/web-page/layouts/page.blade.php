@@ -18,18 +18,7 @@
 
 <style>
     #app{
-        /*background-color: rgba(223, 236, 245, 0.9)!important;*/
-        background-image: url("https://www.canadahelps.org/media/5-Reasons-Why-You-Should-Donate-to-Charity.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: white!important;
         height: 100vh;
     }
-    /*#content{*/
-    /*    background-image: url("https://www.canadahelps.org/media/5-Reasons-Why-You-Should-Donate-to-Charity.jpg");*/
-    /*    background-repeat: no-repeat;*/
-    /*    background-size: cover;*/
-    /*    height: 60vh;*/
-    /*    width: 100%;*/
-    /*}*/
-
 </style>

@@ -34,7 +34,19 @@ Vue.component('city-index', require('./components/City/CityIndex').default);
 Vue.component('category-index', require('./components/Category/CategoryIndex').default);
 Vue.component('category-form', require('./components/Category/CategoryForm').default);
 Vue.component('category-details', require('./components/Category/CategoryDetails').default);
-//donation
+//user
+Vue.component('user-form', require('./components/User/UserForm').default);
+
+//Vue Select
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect);
+import 'vue-select/dist/vue-select.css';
+
+import Datetime from 'vue-datetime'
+// You need a specific loader for CSS files
+import 'vue-datetime/dist/vue-datetime.css'
+
+Vue.use(Datetime)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

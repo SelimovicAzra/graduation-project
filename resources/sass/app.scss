@@ -19,27 +19,63 @@
 body{
     font-family: 'Lato', sans-serif !important;
     background:#000e23;
+
+}
+.text{
+    margin: 250px 0 0 350px;
+    font-family: 'Lily Script One';
+    font-size: 30px;
 }
 li {
     list-style-type: none;
 }
-    .navbar-laravel {
-        //background-color: rgba(223, 236, 245, 0.2)!important;
-        background-color: transparent!important;
-    }
 
     .navbar {
-        //padding: 0.2rem 1rem !important;
-        background-color: rgba(	158, 199, 228, 0.3)!important;
+        max-height: 60px;
+        background-color: rgba(	158,	199,	228, 0.3)!important;
     }
-    .nav-link{
-        //color:white !important;
-        padding-top:5px;
+    .navbar-nav{
+        margin-left: 40rem;
     }
-    .nav-link:hover{
-        background-color: #20a8d8;
-        color: #fff;
-        text-decoration: none;}
+
+.nav-link, .nav-item-logout{
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    margin-right:30px;
+    padding-top:5px;
+    padding-left: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Barlow Semi Condensed", Helvetica, Verdana, sans-serif;
+}
+
+.nav-link::after, .nav-item-logout::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(77,223,233);
+    transition: width .3s;
+}
+
+.nav-link:hover::after, .nav-item-logout:hover::after {
+    width: 100%;
+}
+
+    .nav-logo{
+        margin-left:20px;
+        width: 2.3rem;
+    }
+    .goodToShareNav{
+        padding-top: 10px;
+        padding-left: 10px;
+        color:black;
+        font-weight: bold;
+        font-family: "Barlow Semi Condensed", Helvetica, Verdana, sans-serif;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
     ul, li {
         list-style-type: none;
     }
@@ -56,12 +92,46 @@ li {
         margin-left: 1.5rem;
     }
     .nav-item{
-        padding-left: 2rem;
+        padding-left: 3rem;
     }
     .nav-link i{
         padding-right:10px;
     }
-    #sidebar-collapse{
+    .card-home{
+        background-color: rgba(	158,	199,	228, 0.7)!important;
+        height: 27vh;
+        max-width: 50vh;
+        margin-top: -100px;
+        text-align: center;
+    }
+.card{
+    border: none;
+}
+.card-title-home {
+    margin:20px;
+    font-family: "PT Sans Narrow";
+    font-size: 28px;
+     font-weight: 900;
+    line-height: 26.4px; }
+.card-text-home {
+    margin:30px;
+    font-family: "PT Sans Narrow";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+.homeButtons{
+    border: 1px solid #9EC7E4!important;
+    border-radius: 1rem!important;
+    margin-top: 80px;
+}
+.profile-card{
+    margin-top:5rem;
+}
+
+
+
+#sidebar-collapse{
         margin-right:890px;
         border: 1px solid #DCDCDC;
     }
@@ -83,15 +153,4 @@ li {
         margin-left: -250px !important;
         transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, -ms-flex 0.25s;
     }
-    //.navbar-white{
-    //    color:white !important;
-    //}
-    /* Content Wrapper Styles */
-    //#content{
-    //    //display: flex;
-    //    flex-direction: row;
-    //    flex-grow: 1;
-    //    margin: 65px 20px 20px 0;
-    //    transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, -ms-flex 0.25s;
-    //}
-//}
+
