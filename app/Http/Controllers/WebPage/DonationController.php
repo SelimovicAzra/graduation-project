@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Cms;
+namespace App\Http\Controllers\WebPage;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CountryController extends Controller
+class DonationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        return view('web-page.pages.donation.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        //
+        return view('web-page.pages.donation.create');
     }
 
     /**

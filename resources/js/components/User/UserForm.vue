@@ -2,7 +2,7 @@
     <form v-on:submit.prevent="submitForm" enctype="multipart/form-data">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <form-image :imageUrl="form.image"
 
                                 :placeholder="'https://www.gravatar.com/avatar/default?s=200&r=pg&d=mm'"
@@ -16,22 +16,11 @@
                     <form-input
                         :labelClass="'form-label'"
                         :inputClass="'form-control'"
-                        v-model="form.first_name"
+                        v-model="form.name"
                         :title="'Name'"
                         :type="'text'"
                         :labelFor="'Name'"
                         :placeholder="'Enter Name'"
-                        :required="'required'"
-                        v-on:inputData="updateName"
-                    ></form-input>
-                    <form-input
-                        :labelClass="'form-label'"
-                        :inputClass="'form-control'"
-                        v-model="form.last_name"
-                        :title="'Surname'"
-                        :type="'text'"
-                        :labelFor="'Name'"
-                        :placeholder="'Enter Last Name'"
                         :required="'required'"
                         v-on:inputData="updateName"
                     ></form-input>
@@ -72,6 +61,7 @@
 
 
                 </div>
+                <div class="col-md-1 vl"></div>
                 <div class="col-md-4">
                     <form-input
                         :labelClass="'form-label'"
@@ -107,7 +97,8 @@
                               :options="gender" >
                     </v-select>
                 </div>
-                <button type="submit" class="btn btn-sm btn-success float-right mt-4">Save</button>
+                <button type="submit" class="btn btn-block mt-5 btn-save">Save</button>
+
             </div>
         </div>
 
@@ -157,8 +148,7 @@
             },
         },
         created() {
-            this.form.first_name = this.user.first_name;
-            this.form.last_name = this.user.last_name;
+            this.form.name = this.user.name;
             this.form.email = this.user.email;
             this.form.password = this.user.password;
         }
@@ -170,6 +160,12 @@
         border: 1px solid #9EC7E4 !important;
         border-radius: 5px !important;
         width: 400px;
-
     }
+    .btn-save{
+        background-color: #AC2020;
+        color: white;
+        width: 30%;
+        margin: 10% auto 0 70%;
+    }
+
 </style>

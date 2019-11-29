@@ -66,20 +66,16 @@
                             </div>
                         </div>
 {{--                        <div class="form-group row">--}}
-                            <div class="col-md-10">
-                                <div class="row">
-                                <div class="col-md-6 account"><p>Don't have an account</p></div>
-                                <div class="col-md-6 sign">
+                                <div class="row sign">
+                                    <p>Don't have an account</p>
                                     @if (Route::has('register'))
-                                        <ul class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('  Sign up') }}</a>
-                                        </ul>
+                                            <a class="nav-link" style="padding-left:20px " href="{{ route('register') }}">{{ __('  Sign up') }} </a>
                                     @endif
 
 
                                 </div>
-                                </div>
-                            </div>
+
+
 {{--                        </div>--}}
 
 
@@ -135,16 +131,9 @@
                 color:white;
                 text-shadow: -1px 0 #9EC7E4, 0 1px #9EC7E4, 1px 0 #9EC7E4, 0 -1px #9EC7E4;
             }
-            .sign{
-                margin-top: 25px;
-                padding-left: 0;
-                margin-left: 0;
+            .sign {
+             justify-content: center;
             }
-         .account{
-             margin-top: 25px;
-             padding-right: 0;
-             margin-right: 0;
-         }
 
         }
         @media (max-width: 1199px) {

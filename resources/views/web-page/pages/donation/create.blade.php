@@ -3,20 +3,15 @@
 @section('content')
     <div class="card shadow-sm profile-card">
         <div class="card-header card-top">
-            <h5 class="d-inline"><strong>Personal Information</strong></h5>
+            <h5 class="d-inline"><strong>Donation</strong></h5>
             <a href="{{ route('home') }}"><button class="link-style btn btn-sm float-right goback"><i class="fas fa-arrow-circle-left"></i> Go Back</button></a>
         </div>
 
         <div class="card-body">
 
-            <user-form
-                v-bind:user="{{$user}}"
-{{--                v-bind:city="{{$city}}"--}}
-{{--                v-bind:roles="{{$roles}}"--}}
-{{--                image="{{$image}}"--}}
-                :create="false"
+            <donation-form
 
-            ></user-form>
+            ></donation-form>
         </div>
     </div>
 @endsection

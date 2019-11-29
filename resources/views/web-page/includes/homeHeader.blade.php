@@ -16,8 +16,12 @@
                 <a class="nav-link" href="{{route('profile',auth()->user()->id)}}">PROFILE</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route('donations.create')}}">Donate</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">MY DONATIONS</a>
             </li>
+
 
         </ul>
         @guest

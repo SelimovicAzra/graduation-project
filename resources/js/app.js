@@ -37,6 +37,9 @@ Vue.component('category-details', require('./components/Category/CategoryDetails
 //user
 Vue.component('user-form', require('./components/User/UserForm').default);
 
+//donation
+Vue.component('donation-form', require('./components/Donation/DonationForm').default);
+
 //Vue Select
 import vSelect from 'vue-select'
 Vue.component('v-select', vSelect);
