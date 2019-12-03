@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Spatie\QueryBuilder\Filter;
 
 class User extends Authenticatable
 {
@@ -45,5 +47,25 @@ class User extends Authenticatable
     public function city()
     {
         return $this->belongsTo('App\Models\City', 'city_id');
+    }
+    public static function getFilters()
+    {
+        return [Filter::scope('term')];
+    }
+    public function scopeTerm(Builder $query, $term): Builder
+    {
+        return $query->where('name', 'like', '%' . $term . '%')
+            ->orWhere('email', 'like', '%' . $term . '%')
+            ->orWhere('phone_number', 'like', '%' . $term . '%')
+            ->orWhere('created_at', 'like', '%' . $term . '%');
+    }
+    public static function getIncludes()
+    {
+        return ['kids', 'roles', 'articles', 'therapy', 'city', 'kid-roles.roles', 'kid-roles.kid'];
+    }
+
+    public static function getSorts()
+    {
+        return ['created_at', 'first_name', 'last_name', 'phone_number', 'email'];
     }
 }

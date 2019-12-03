@@ -33,7 +33,7 @@
                         :labelFor="'Email'"
                         :placeholder="'Enter email'"
                         :required="'required'"
-                        v-on:inputData="updateName"
+                        v-on:inputData="updateEmail"
                     ></form-input>
                     <form-input
                         :labelClass="'form-label'"
@@ -44,7 +44,7 @@
                         :labelFor="'Password'"
                         :placeholder="'Enter Password'"
                         :required="'required'"
-                        v-on:inputData="updateName"
+                        v-on:inputData="updatePassword"
                     ></form-input>
                     <form-input
                         :labelClass="'form-label'"
@@ -55,7 +55,7 @@
                         :labelFor="'Repeat Password'"
                         :placeholder="'Enter Repeat Password'"
                         :required="'required'"
-                        v-on:inputData="updateName"
+                        v-on:inputData="updateRepeatPassword"
                     ></form-input>
 
 
@@ -72,10 +72,10 @@
                         :labelFor="'Phone Number'"
                         :placeholder="'Enter Phone Number'"
                         :required="'required'"
-                        v-on:inputData="updateName"
+                        v-on:inputData="updatePhoneNumber"
                     ></form-input>
                     <label for="date-selection">Birth Date</label>
-                    <datetime id="date-selection" v-model="form.birth_date" :labelClass="'form-label'"
+                    <datetime id="date-selection" v-model="form.birth_date" v-on:inputData="updateBirthDate" :labelClass="'form-label'"
                               :inputClass="'form-control'"
                               :placeholder="'Choose birth date'"style=" border: 1px solid #9EC7E4 !important;
                                 border-radius: 5px !important;
@@ -87,14 +87,9 @@
                               :options="city" v-on:inputData="updateCity"
                               v-on:search="searchCity">
                     </v-select>
-                    <label for="category-select-country">Country</label>
-                    <v-select id="category-select-country" label="name" v-model="form.selectedCountry"
-                              :options="country" v-on:inputData="updateCountry"
-                              v-on:search="searchCountry">
-                    </v-select>
                     <label for="gender-selection">Gender</label>
-                    <v-select id="gender-selection" label="name" v-model="form.selectedGender"
-                              :options="gender" >
+                    <v-select id="gender-selection" label="name" v-model="form.selectedGender" v-on:inputData="updateGender"
+                              :options="['Male', 'Female']" >
                     </v-select>
                 </div>
                 <button type="submit" class="btn btn-block mt-5 btn-save">Save</button>
@@ -126,9 +121,9 @@
             return {
                 edit: false,
                 changedImage: false,
+                city:[],
                 form: {
-                    first_name: '',
-                    last_name:'',
+                    name: '',
                     email:'',
                     password:'',
                     repeat_password:'',
@@ -146,11 +141,119 @@
             updateName(event) {
                 this.form.name = event;
             },
+            updatePassword(event) {
+                this.form.password = event;
+            },
+            updateRepeatPassword(event) {
+                this.form.repeat_password = event;
+            },
+            updateEmail(event) {
+                this.form.email = event;
+            },
+            updatePhoneNumber(event) {
+                this.form.phone_number = event;
+            },
+            updateGender(event) {
+                this.form.gender = event;
+            },
+            updateBirthDate(event) {
+                this.form.birth_date = event;
+            },
+            updateCity(event) {
+                this.form.city = event;
+            },
+            updateImage(event){
+                this.form.image = event;
+                this.changedImage = true;
+            },
+
+            searchCity(event) {
+                if (event.length >= 3) {
+                    axios.get('/cities/search', {
+                        params: {
+                            search: event
+                        },
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    })
+                        .then(response => {
+                            console.log("response",response);
+                            this.city = response.data.data;
+                        }).catch(error => {
+                        console.log(error)
+                    });
+                }
+            },
+
+            submitForm() {
+                let newCity;
+                for (let i = 0; i < this.city.length; i++) {
+                    if (this.form.selectedCity.name === this.city[i].name) {
+                        newCity = this.form.selectedCity.id;
+                    }
+                }
+                let formData = new FormData();
+                this.changedImage? formData.append('image' , this.form.image) :'';
+                formData.append('name', this.form.name);
+                formData.append('gender', this.form.selectedGender);
+                formData.append('password', this.form.password);
+                formData.append('password_confirmation', this.form.repeat_password);
+                formData.append('email', this.form.email);
+                formData.append('phone_number', this.form.phone_number);
+                formData.append('birth_date', moment(this.form.birth_date).format('Y-M-D H:mm:ss'));
+                if (this.create) {
+                    formData.append('city_id', newCity);
+                } else {
+                    console.log(this.form.selectedCity.id, 'ovo');
+                    let cityEdit = this.form.selectedCity.id;
+                    formData.append('city_id', cityEdit);
+                }
+
+                !this.create ? formData.append('_method', 'PUT') : '';
+
+                let url = window.location.protocol + '//' + window.location.host + (this.create ? '/users' : '/users/' + this.user.id);
+                console.log("URL", url);
+
+                axios.post(url, formData, {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                    .then(response => {
+                        //alert('Success');
+                        Toast.fire({
+                            type: 'success',
+                            title: 'User successfully edited'
+                        });
+                        console.log(response);
+                        if (this.create) {
+                            Toast.fire({
+                                type: 'success',
+                                title: 'User successfully created'
+                            });
+                            console.log(response.data.data.id);
+                            setTimeout(() => {
+                                let url = window.location.protocol + '//' + window.location.host;
+                                window.location = url + '/users/' + response.data.data.id + '/edit'+ "?include=kids,roles";
+                            }, 1000)
+                        }
+                    });
+            }
         },
         created() {
+            console.log(this.$props);
             this.form.name = this.user.name;
-            this.form.email = this.user.email;
             this.form.password = this.user.password;
+            this.form.email = this.user.email;
+            this.form.selectedGender = this.user.gender;
+            let birth_date = new Date(this.user.birth_date);
+            this.form.birth_date = birth_date.toISOString();
+            this.form.phone_number = this.user.phone_number;
+            // this.form.selectedCity = this.user.city.name;
+            // this.form.image = this.image;
         }
     }
 

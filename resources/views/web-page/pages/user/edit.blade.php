@@ -11,7 +11,6 @@
 
             <user-form
                 v-bind:user="{{$user}}"
-{{--                v-bind:city="{{$city}}"--}}
 {{--                v-bind:roles="{{$roles}}"--}}
 {{--                image="{{$image}}"--}}
                 :create="false"

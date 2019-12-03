@@ -9,9 +9,10 @@
 
         <div class="card-body">
 
-            <donation-form
-
-            ></donation-form>
+            <item-form
+                :category = "{{$category}}"
+                :create="true"
+            ></item-form>
         </div>
     </div>
 @endsection

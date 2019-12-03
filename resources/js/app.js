@@ -21,9 +21,9 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //item
-Vue.component('item-index', require('./components/Item/ItemIndex').default);
+// Vue.component('item-index', require('./components/Item/ItemIndex').default);
 Vue.component('item-form', require('./components/Item/ItemForm').default);
-Vue.component('item-details', require('./components/Item/ItemDetails').default);
+// Vue.component('item-details', require('./components/Item/ItemDetails').default);
 //country
 Vue.component('country-details', require('./components/Country/CountryDetails').default);
 Vue.component('country-index', require('./components/Country/CountryIndex').default);
@@ -37,7 +37,7 @@ Vue.component('category-details', require('./components/Category/CategoryDetails
 //user
 Vue.component('user-form', require('./components/User/UserForm').default);
 
-//donation
+//item
 Vue.component('donation-form', require('./components/Donation/DonationForm').default);
 
 //Vue Select
@@ -49,7 +49,20 @@ import Datetime from 'vue-datetime'
 // You need a specific loader for CSS files
 import 'vue-datetime/dist/vue-datetime.css'
 
-Vue.use(Datetime)
+Vue.use(Datetime);
+window.moment = require('moment/moment');
+//SweetAlert2
+import Swal from 'sweetalert2'
+window.Swal = Swal;
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+
+window.Toast = Toast;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

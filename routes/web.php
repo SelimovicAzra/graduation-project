@@ -23,12 +23,15 @@ Route::group(['namespace' => 'Cms'], function () {
 Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/profile{user}', 'UserController@edit')->name('profile');
-//    Route::get('/donation{user}', 'DonationController@edit')->name('donation');
+    Route::get('/cities/search', 'CityController@search')->name('city.search');
+//    Route::get('/item{user}', 'DonationController@edit')->name('item');
 
     Route::resources([
 
-//        'users' => 'UserController',
+        'users' => 'UserController',
         'donations' => 'DonationController',
+        'cities'=>'CityController',
+        'items' => 'ItemController',
 
 
 
@@ -36,26 +39,26 @@ Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
 
 });
 
-
-Route::group(['namespace' => 'Cms', 'middleware' => 'auth'], function () {
-
-//    Route::get('/users/raw', 'UserController@raw')->name('user.raw');
-
-//    Route::get('/cities/raw', 'CityController@raw')->name('city.raw');
-//    Route::get('/countries/raw', 'CountryController@raw')->name('country.raw');
+//
+//Route::group(['namespace' => 'Cms', 'middleware' => 'auth'], function () {
+//
+////    Route::get('/users/raw', 'UserController@raw')->name('user.raw');
+//
+////    Route::get('/cities/raw', 'CityController@raw')->name('city.raw');
+////    Route::get('/countries/raw', 'CountryController@raw')->name('country.raw');
+////
+////
+////    //search functions
+////    Route::get('/countries/search', 'CountryController@search')->name('country.search');
+////    Route::get('/cities/search', 'CityController@search')->name('city.search');
+//
+//    Route::resources([
+//
+//        'cities' => 'CityController',
+//        'countries' => 'CountryController',
+////        'users'=>'UserController'
 //
 //
-//    //search functions
-//    Route::get('/countries/search', 'CountryController@search')->name('country.search');
-//    Route::get('/cities/search', 'CityController@search')->name('city.search');
-
-    Route::resources([
-
-        'cities' => 'CityController',
-        'countries' => 'CountryController',
-//        'users'=>'UserController'
-
-
-    ]);
-
-});
+//    ]);
+//
+//});
