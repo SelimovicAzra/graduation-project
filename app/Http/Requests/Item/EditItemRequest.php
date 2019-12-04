@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Item;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class EditItemRequest extends FormRequest
 {
@@ -13,7 +14,8 @@ class EditItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        $item = Auth::user();
+        return $item;
     }
 
     /**

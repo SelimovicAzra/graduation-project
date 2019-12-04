@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <form-image :imageUrl="form.image"
-
+                                v-on:imageUpload="updateImage"
                                 :placeholder="'https://www.gravatar.com/avatar/default?s=200&r=pg&d=mm'"
                                 :rounded="true"
                                 refName="image"
@@ -35,6 +35,7 @@
                         :required="'required'"
                         v-on:inputData="updateEmail"
                     ></form-input>
+<!--                    <button class="btn-success" v-on:click="show = true">Change Password</button>-->
                     <form-input
                         :labelClass="'form-label'"
                         :inputClass="'form-control'"
@@ -43,8 +44,9 @@
                         :type="'text'"
                         :labelFor="'Password'"
                         :placeholder="'Enter Password'"
-                        :required="'required'"
+
                         v-on:inputData="updatePassword"
+
                     ></form-input>
                     <form-input
                         :labelClass="'form-label'"
@@ -54,8 +56,9 @@
                         :type="'text'"
                         :labelFor="'Repeat Password'"
                         :placeholder="'Enter Repeat Password'"
-                        :required="'required'"
+
                         v-on:inputData="updateRepeatPassword"
+
                     ></form-input>
 
 
@@ -119,6 +122,7 @@
         },
         data() {
             return {
+                show:false,
                 edit: false,
                 changedImage: false,
                 city:[],
@@ -246,13 +250,13 @@
         created() {
             console.log(this.$props);
             this.form.name = this.user.name;
-            this.form.password = this.user.password;
+            // this.form.password = this.user.password;
             this.form.email = this.user.email;
             this.form.selectedGender = this.user.gender;
             let birth_date = new Date(this.user.birth_date);
             this.form.birth_date = birth_date.toISOString();
             this.form.phone_number = this.user.phone_number;
-            // this.form.selectedCity = this.user.city.name;
+            this.form.selectedCity = this.user.city.name;
             // this.form.image = this.image;
         }
     }

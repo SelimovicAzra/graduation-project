@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\WebPage;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Item\EditItemRequest;
 use App\Http\Requests\Item\StoreItemRequest;
+use App\Http\Requests\Item\UpdateItemRequest;
 use App\Http\Resources\ItemResource;
 use App\Models\Category;
+use App\Models\Donation;
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -42,13 +47,16 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request, Item $item)
     {
-        dd($request->all());
         $attributes = $request->validated();
         $attributes['category_id'] = $request->category_id;
         $attributes['city_id'] = $request->city_id;
         $item->fill($attributes)->save();
 
         if($item){
+            $dontion = Donation::create([
+               'user_id' => Auth::user()->id,
+               'item_id'=> $item->id,
+            ]);
             return (new ItemResource($item))
                 ->response()
                 ->setStatusCode(200);
@@ -73,11 +81,15 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(EditItemRequest $request, Item $item)
     {
+        $user = Auth::user();
+        $existingCity = $user->city;
         $category = Category::all();
         return view('web-page.pages.item.edit')
-            ->withCategory($category);
+            ->withCategory($category)
+            ->withItem($item)
+            ->withExistingCity($existingCity);
     }
 
     /**
@@ -87,9 +99,21 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateItemRequest $request, Item $item)
     {
-        //
+        $attributes = $request->validated();
+        $attributes['city_id'] = $request->city_id;
+//        if(isset($attributes['image'])){
+//            updateImage($attributes['image'], $user, 'user-avatars');
+//        }
+        $item->update($attributes);
+//        event(new UserUpdatedEvent($user));
+        if ($item) {
+            return (new ItemResource($item))
+                ->response()
+                ->setStatusCode(200);
+        }
+        return response()->json('Error while creating new user', 422);
     }
 
     /**

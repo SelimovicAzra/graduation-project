@@ -19,6 +19,9 @@
                 <a class="nav-link" href="{{route('items.create')}}">Donate</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route('donations.index')}}">DONATIONS</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">MY DONATIONS</a>
             </li>
 

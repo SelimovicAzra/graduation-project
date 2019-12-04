@@ -2263,7 +2263,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['item', 'category', 'image', 'create'],
+  props: ['item', 'category', 'image', 'create', 'existing-city'],
   components: {
     FormInput: _Form_FormInput_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     FormImage: _Form_FormImage_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -2332,6 +2332,14 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
+      var newCategory;
+
+      for (var _i = 0; _i < this.category.length; _i++) {
+        if (this.form.selectedCategory.name === this.category[_i].name) {
+          newCategory = this.form.selectedCategory.id; // console.log(newCategory, 'category_id');
+        }
+      }
+
       var formData = new FormData();
       this.changedImage ? formData.append('image', this.form.image) : '';
       formData.append('name', this.form.name);
@@ -2344,6 +2352,14 @@ __webpack_require__.r(__webpack_exports__);
         console.log(this.form.selectedCity.id, 'ovo');
         var cityEdit = this.form.selectedCity.id;
         formData.append('city_id', cityEdit);
+      }
+
+      if (this.create) {
+        formData.append('category_id', newCategory);
+      } else {
+        console.log(this.form.selectedCategory.id, 'ovo');
+        var categoryEdit = this.form.selectedCategory.id;
+        formData.append('category_id', categoryEdit);
       }
 
       !this.create ? formData.append('_method', 'PUT') : '';
@@ -2366,10 +2382,9 @@ __webpack_require__.r(__webpack_exports__);
             type: 'success',
             title: 'Item successfully created'
           });
-          console.log(response.data.data.id);
           setTimeout(function () {
             var url = window.location.protocol + '//' + window.location.host;
-            window.location = url + '/items/' + response.data.data.id + '/edit' + id;
+            window.location = url + '/donations';
           }, 1000);
         }
       });
@@ -2377,9 +2392,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     console.log('PROPS', this.$props); // this.form.name = this.item.name;
-    // this.form.selectedCity = this.item.city.name;
-
-    this.form.selectedCategory = this.category.name;
+    // this.form.description = this.item.description;
+    // this.form.selectedCity = this.city.name;
+    // for(let i = 0; i < this.category.length; i++) {
+    //     this.form.selectedCategory = this.category[i].name;
+    // }
   }
 });
 
@@ -2502,6 +2519,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2513,6 +2533,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      show: false,
       edit: false,
       changedImage: false,
       city: [],
@@ -2640,14 +2661,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     console.log(this.$props);
-    this.form.name = this.user.name;
-    this.form.password = this.user.password;
+    this.form.name = this.user.name; // this.form.password = this.user.password;
+
     this.form.email = this.user.email;
     this.form.selectedGender = this.user.gender;
     var birth_date = new Date(this.user.birth_date);
     this.form.birth_date = birth_date.toISOString();
-    this.form.phone_number = this.user.phone_number; // this.form.selectedCity = this.user.city.name;
-    // this.form.image = this.image;
+    this.form.phone_number = this.user.phone_number;
+    this.form.selectedCity = this.user.city.name; // this.form.image = this.image;
   }
 });
 
@@ -72471,7 +72492,8 @@ var render = function() {
                   refName: "image",
                   refUpload: "image-upload",
                   refId: "imageID"
-                }
+                },
+                on: { imageUpload: _vm.updateImage }
               })
             ],
             1
@@ -72623,7 +72645,8 @@ var render = function() {
                   refName: "image",
                   refUpload: "image-upload",
                   refId: "imageID"
-                }
+                },
+                on: { imageUpload: _vm.updateImage }
               })
             ],
             1
@@ -72680,8 +72703,7 @@ var render = function() {
                   title: "Password",
                   type: "text",
                   labelFor: "Password",
-                  placeholder: "Enter Password",
-                  required: "required"
+                  placeholder: "Enter Password"
                 },
                 on: { inputData: _vm.updatePassword },
                 model: {
@@ -72700,8 +72722,7 @@ var render = function() {
                   title: "Repeat Password",
                   type: "text",
                   labelFor: "Repeat Password",
-                  placeholder: "Enter Repeat Password",
-                  required: "required"
+                  placeholder: "Enter Repeat Password"
                 },
                 on: { inputData: _vm.updateRepeatPassword },
                 model: {

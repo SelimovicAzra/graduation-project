@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <form-image :imageUrl="form.image"
-
+                                v-on:imageUpload="updateImage"
                                 :placeholder="'https://cdn0.iconfinder.com/data/icons/basic-outline/64/icon-basic-set_12-camera-512.png'"
                                 :rounded="true"
                                 refName="image"
@@ -71,7 +71,8 @@
             'item',
             'category',
             'image',
-            'create'
+            'create',
+            'existing-city'
         ],
         components: {
             FormInput,
@@ -137,6 +138,13 @@
                         newCity = this.form.selectedCity.id;
                     }
                 }
+                let newCategory;
+                for (let i = 0; i < this.category.length; i++) {
+                    if (this.form.selectedCategory.name === this.category[i].name) {
+                        newCategory= this.form.selectedCategory.id;
+                        // console.log(newCategory, 'category_id');
+                    }
+                }
                 let formData = new FormData();
                 this.changedImage? formData.append('image' , this.form.image) :'';
                 formData.append('name', this.form.name);
@@ -144,12 +152,20 @@
                 formData.append('description', this.form.description);
                 // formData.append('user_id', this.user.id);
 
+
                 if (this.create) {
                     formData.append('city_id', newCity);
                 } else {
                     console.log(this.form.selectedCity.id, 'ovo');
                     let cityEdit = this.form.selectedCity.id;
                     formData.append('city_id', cityEdit);
+                }
+                if (this.create) {
+                    formData.append('category_id', newCategory);
+                } else {
+                    console.log(this.form.selectedCategory.id, 'ovo');
+                    let categoryEdit = this.form.selectedCategory.id;
+                    formData.append('category_id', categoryEdit);
                 }
 
                 !this.create ? formData.append('_method', 'PUT') : '';
@@ -174,10 +190,9 @@
                                 type: 'success',
                                 title: 'Item successfully created'
                             });
-                            console.log(response.data.data.id);
                             setTimeout(() => {
                                 let url = window.location.protocol + '//' + window.location.host;
-                                window.location = url + '/items/' + response.data.data.id + '/edit'+ id;
+                                window.location = url + '/donations';
                             }, 1000)
                         }
                     });
@@ -188,8 +203,11 @@
         created() {
             console.log('PROPS',this.$props);
             // this.form.name = this.item.name;
-            // this.form.selectedCity = this.item.city.name;
-            this.form.selectedCategory = this.category.name;
+            // this.form.description = this.item.description;
+            // this.form.selectedCity = this.city.name;
+            // for(let i = 0; i < this.category.length; i++) {
+            //     this.form.selectedCategory = this.category[i].name;
+            // }
 
 
         }

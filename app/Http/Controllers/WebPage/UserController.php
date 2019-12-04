@@ -65,7 +65,7 @@ class UserController extends Controller
      */
     public function edit(EditUserRequest $request, User $user)
     {
-        $city = City::all();
+        $city = $user->city;
 //        $image = $user->getMedia('user-avatars')->first() ? $user->getMedia('user-avatars')->first()->getUrl() : '';
         return view('web-page.pages.user.edit')
             ->withUser($user)

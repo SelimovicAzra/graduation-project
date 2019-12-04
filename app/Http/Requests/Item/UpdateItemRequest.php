@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Item;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateItemRequest extends FormRequest
 {
@@ -13,7 +14,8 @@ class UpdateItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+       $item = Auth::user();
+       return $item;
     }
 
     /**
@@ -24,7 +26,10 @@ class UpdateItemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'sometimes|string|max:50',
+            'category_id' => 'sometimes',
+            'city_id' => 'sometimes',
+            'description' => 'sometimes',
         ];
     }
 }

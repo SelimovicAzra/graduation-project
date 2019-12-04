@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-8 offset-md-6 mt-3">
             <div class="card card-signup">
-                <div class="card-header">{{ __('Register') }}</div>
+
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -16,6 +16,7 @@
                         <div class="col-sm-6 col-md-8 offset-md-3 title">
                             <p>Good2Share</p>
                         </div>
+                        <div class="sign-title">Sign In</div>
                         <div class="form-group row">
 {{--                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>--}}
 
@@ -73,6 +74,14 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="row login">
+                            <p>Already have an account </p>
+                            @if (Route::has('login'))
+                                <a class="nav-link" style="padding-left:20px " href="{{ route('login') }}">{{ __('  Login') }} </a>
+                            @endif
+
+
+                        </div>
                     </form>
                 </div>
             </div>
@@ -89,6 +98,7 @@
             height:100vh;
         }
         @media (min-width: 1300px) {
+
             .card-signup {
                 margin-left: 10rem !important;
                 width: 100%;
@@ -100,13 +110,13 @@
                 font: 20px arial, sans-serif;
                 font-weight: bold;
             }
-        }
+
         form {
             position: inherit;
             margin: 60px;
         }
 
-        #email, #password {
+        #email, #password, #name, #password-confirm {
             width: 345px;
             margin-left: 93px;
         }
@@ -121,6 +131,17 @@
         input, button{
             border: 1px solid #9EC7E4!important;
             border-radius: 1rem!important;
+        }
+        .sign-title{
+            margin:60px 0px 50px 180px;
+            font: 3.5rem arial, sans-serif;
+            font-weight: bold;
+            color:white;
+            text-shadow: -1px 0 #9EC7E4, 0 1px #9EC7E4, 1px 0 #9EC7E4, 0 -1px #9EC7E4;
+        }
+        .sign {
+            justify-content: center;
+        }
         }
 
 
