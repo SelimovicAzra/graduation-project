@@ -74,6 +74,7 @@
                                 </button>
                             </div>
                         </div>
+
                         <div class="row login">
                             <p>Already have an account </p>
                             @if (Route::has('login'))

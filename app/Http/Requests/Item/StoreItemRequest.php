@@ -30,6 +30,7 @@ class StoreItemRequest extends FormRequest
             'category_id' => 'required',
             'city_id' => 'required',
             'description' => 'required',
+            'image' => 'sometimes',
 
         ];
     }

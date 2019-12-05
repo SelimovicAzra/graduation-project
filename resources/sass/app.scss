@@ -6,6 +6,8 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+// Cropper
+@import '~cropperjs/src/css/cropper.scss';
 
 .card-login, .card-signup{
     height: 90vh;

@@ -110,6 +110,7 @@
             updateImage(event){
                 this.form.image = event;
                 this.changedImage = true;
+                console.log('slikaaa', event)
             },
             searchCity(event) {
                 if (event.length >= 3) {
@@ -192,7 +193,7 @@
                             });
                             setTimeout(() => {
                                 let url = window.location.protocol + '//' + window.location.host;
-                                window.location = url + '/donations';
+                                // window.location = url + '/donations';
                             }, 1000)
                         }
                     });

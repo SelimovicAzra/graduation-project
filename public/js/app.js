@@ -2299,6 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
     updateImage: function updateImage(event) {
       this.form.image = event;
       this.changedImage = true;
+      console.log('slikaaa', event);
     },
     searchCity: function searchCity(event) {
       var _this = this;
@@ -2383,8 +2384,7 @@ __webpack_require__.r(__webpack_exports__);
             title: 'Item successfully created'
           });
           setTimeout(function () {
-            var url = window.location.protocol + '//' + window.location.host;
-            window.location = url + '/donations';
+            var url = window.location.protocol + '//' + window.location.host; // window.location = url + '/donations';
           }, 1000);
         }
       });

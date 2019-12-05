@@ -61,7 +61,7 @@ class User extends Authenticatable
     }
     public static function getIncludes()
     {
-        return ['kids', 'roles', 'articles', 'therapy', 'city', 'kid-roles.roles', 'kid-roles.kid'];
+//        return ['kids', 'roles', 'articles', 'therapy', 'city', 'kid-roles.roles', 'kid-roles.kid'];
     }
 
     public static function getSorts()

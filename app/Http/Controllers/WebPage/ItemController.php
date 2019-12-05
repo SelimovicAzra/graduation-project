@@ -47,13 +47,17 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request, Item $item)
     {
+//        dd($request->all());
         $attributes = $request->validated();
         $attributes['category_id'] = $request->category_id;
         $attributes['city_id'] = $request->city_id;
+        if(isset($attributes['image'])) {
+            $item->addMedia($attributes['image'])->preservingOriginal()->toMediaCollection('item-images');
+        }
         $item->fill($attributes)->save();
 
         if($item){
-            $dontion = Donation::create([
+            $donation = Donation::create([
                'user_id' => Auth::user()->id,
                'item_id'=> $item->id,
             ]);
@@ -86,6 +90,8 @@ class ItemController extends Controller
         $user = Auth::user();
         $existingCity = $user->city;
         $category = Category::all();
+        $image = $item->getMedia('item-images')->first() ? $item->getMedia('item-images')->first()->getUrl() : '';
+
         return view('web-page.pages.item.edit')
             ->withCategory($category)
             ->withItem($item)
@@ -103,9 +109,9 @@ class ItemController extends Controller
     {
         $attributes = $request->validated();
         $attributes['city_id'] = $request->city_id;
-//        if(isset($attributes['image'])){
-//            updateImage($attributes['image'], $user, 'user-avatars');
-//        }
+        if(isset($attributes['image'])){
+            updateImage($attributes['image'], $item, 'item-images');
+        }
         $item->update($attributes);
 //        event(new UserUpdatedEvent($user));
         if ($item) {

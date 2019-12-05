@@ -15,6 +15,7 @@ class DonationController extends Controller
      */
     public function index()
     {
+
         return view('web-page.pages.donation.index')
             ->withDonation(Donation::all());
     }
