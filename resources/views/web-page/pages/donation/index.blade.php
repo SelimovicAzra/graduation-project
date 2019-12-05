@@ -32,4 +32,5 @@
     .pic{
         width: 150px;
     }
+
 </style>
