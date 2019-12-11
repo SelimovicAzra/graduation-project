@@ -9,8 +9,8 @@
         @yield('content')
     </div>
 
-    @include('web-page.includes.footer')
-    @include('web-page.includes.footer')
+{{--    @include('web-page.includes.footer')--}}
+
 </div>
 @include('web-page.includes.foot')
 @stack('custom-js')

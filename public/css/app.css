@@ -11394,11 +11394,19 @@ a.text-dark:focus {
   cursor: not-allowed;
 }
 
+html {
+  background-color: rgba(158, 199, 228, 0.3) !important;
+}
+
 .card-login,
 .card-signup {
   height: 90vh;
   position: relative;
   background-color: rgba(200, 200, 200, 0.5);
+}
+
+#app {
+  background-color: white !important;
 }
 
 body {
@@ -11575,5 +11583,51 @@ li {
 .vl {
   border-left: 4px solid #AC2020;
   height: 500px;
+}
+
+.footer {
+  background-color: rgba(158, 199, 228, 0.3) !important;
+  /*background-color: aqua!important;*/
+}
+
+.rowDonations {
+  margin-top: 5%;
+}
+
+.cardsDonations {
+  margin-bottom: 8%;
+  border: 2px solid #9EC7E4 !important;
+  border-radius: 0.5rem !important;
+  text-align: center;
+  /*padding-right: 15px;*/
+  /*padding-left: 15px;*/
+  max-height: 400px;
+  padding-bottom: 6%;
+}
+
+.donationButtons {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.cardsDonations:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-transition: -webkit-transform 150ms linear;
+  transition: -webkit-transform 150ms linear;
+  transition: transform 150ms linear;
+  transition: transform 150ms linear, -webkit-transform 150ms linear;
+  box-shadow: 0 7px 6px rgba(0, 0, 0, 0.12), 0 14px 15px rgba(0, 0, 0, 0.12) !important;
+  display: inline-block;
+}
+
+.picDonation {
+  width: 100%;
+  max-height: 250px;
+}
+
+.cardDonationDes {
+  text-align: justify;
 }
 

@@ -1,36 +1,29 @@
-
 @extends('web-page.layouts.page')
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row rowDonations">
             @foreach($donation as $donation)
-            <div class="col-sm-3">
-                <div class="card cards">
-                    <div class="card-block card-donation">
-                        <img class="pic" src="{{$donation->item->getMedia('item-images')->first() ? $donation->item->getMedia('item-images')->first()->getFullUrl() : 'https://cdn0.iconfinder.com/data/icons/basic-outline/64/icon-basic-set_12-camera-512.png'}}"/>
-                        <h4 class="card-title card-title-donation">{{$donation->item->name}}</h4>
-                        <p class="card-text card-text-donation">{{$donation->item->description}}</p>
-                        <button class="btn btn-primary donationButtons" type="submit">Button</button>
+                <div class="col-sm-4">
+                    <div class="card cardsDonations">
+                        <div class="card-block card-donation">
+                            <img class="picDonation"
+                                 src="{{$donation->item->getMedia('item-images')->first() ? $donation->item->getMedia('item-images')->first()->getFullUrl() : 'https://cdn0.iconfinder.com/data/icons/basic-outline/64/icon-basic-set_12-camera-512.png'}}"/>
+                            <h4 class="card-title card-title-donation">{{$donation->item->name}}</h4>
+                            <p class="card-text card-text-donation cardDonationDes">{{$donation->item->category->name}} - {{date('M d Y', strtotime($donation->item->created_at))}}</p>
+                            {{--                        <p class="card-text card-text-donation card-des">{{$donation->item->description}}</p>--}}
+
+                            <button class="btn btn-primary donationButtons" type="submit"><a href="{{route('donations.show', $donation->item->id)}}"></a>Button</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-@endforeach
+            @endforeach
         </div>
     </div>
 @endsection
 
 <style>
 
-    .cards{
-        margin-top:20%;
-        margin-bottom: 7%;
-        border: 2px solid #9EC7E4!important;
-        border-radius: 0.5rem!important;
-        text-align: center;
-    }
-    .pic{
-        width: 150px;
-    }
+
 
 </style>

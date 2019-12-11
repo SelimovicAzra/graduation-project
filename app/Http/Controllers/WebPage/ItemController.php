@@ -51,6 +51,8 @@ class ItemController extends Controller
         $attributes = $request->validated();
         $attributes['category_id'] = $request->category_id;
         $attributes['city_id'] = $request->city_id;
+        $attributes['user_id'] = Auth::user()->id;
+//        dd($attributes['user_id']);
         if(isset($attributes['image'])) {
             $item->addMedia($attributes['image'])->preservingOriginal()->toMediaCollection('item-images');
         }

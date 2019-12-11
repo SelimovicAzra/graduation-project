@@ -29,7 +29,7 @@ class StoreItemRequest extends FormRequest
             'name' => 'required|string|max:50',
             'category_id' => 'required',
             'city_id' => 'required',
-            'description' => 'required',
+            'description' => 'required|string|max:20000',
             'image' => 'sometimes',
 
         ];

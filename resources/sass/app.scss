@@ -9,6 +9,10 @@
 // Cropper
 @import '~cropperjs/src/css/cropper.scss';
 
+html{
+    background-color: rgba(	158,	199,	228, 0.3)!important;
+
+}
 .card-login, .card-signup{
     height: 90vh;
     position: relative;
@@ -17,6 +21,7 @@
 
 #app{
     //display: flex;
+    background-color: white!important;
 }
 body{
     font-family: 'Lato', sans-serif !important;
@@ -162,4 +167,53 @@ li {
 .vl {
     border-left: 4px solid #AC2020;
     height: 500px;
+}
+.footer{
+background-color: rgba(158, 199, 228, 0.3) !important;
+    //min-height: 100vh!important;
+    /*background-color: aqua!important;*/
+}
+
+.rowDonations{
+    margin-top: 5%;
+}
+.cardsDonations {
+    margin-bottom: 8%;
+    border: 2px solid #9EC7E4 !important;
+    border-radius: 0.5rem !important;
+    text-align: center;
+    /*padding-right: 15px;*/
+    /*padding-left: 15px;*/
+    max-height:400px;
+    padding-bottom: 6%;
+}
+
+.donationButtons {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.cardsDonations:hover {
+    transform: translateY(-8px);
+    transition: transform 150ms linear;
+    box-shadow: 0 7px 6px rgba(0, 0, 0, 0.12), 0 14px 15px rgba(0, 0, 0, 0.12) !important;
+    //background-color: rgba(0, 0, 0, 0.99);
+    display: inline-block;
+
+    //z-index: 9000;
+}
+//.cardsDonations:hover .donationButtons{
+//    display: block !important;
+//}
+
+.picDonation {
+    width: 100%;
+    max-height:250px;
+}
+//.picDonation:hover{
+//    background-color: rgba(0, 0, 0, 0.99)!important;
+//}
+.cardDonationDes {
+    text-align: justify;
 }
