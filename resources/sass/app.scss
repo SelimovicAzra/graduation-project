@@ -13,12 +13,68 @@ html{
     background-color:white!important;
 
 }
+///////login & register
 .card-login, .card-signup{
-    height: 90vh;
-    position: relative;
+    min-width: 90vh;
+    min-height: 80vh;
+    margin-top: 5%;
+    float:right;
     background-color:rgba(200, 200, 200, 0.5);
 }
+.logo{
+    max-width: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 3%;
+}
+.titleLogin {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font: 1.5rem arial, sans-serif;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding-bottom: 5%;
+}
 
+.login-title {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font: 2.5rem arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px 0 #9EC7E4, 0 1px #9EC7E4, 1px 0 #9EC7E4, 0 -1px #9EC7E4;
+    padding-bottom: 8%;
+}
+.email, .password {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+#password{
+    padding-bottom: 5%;
+}
+.log-btn{
+    margin: 0 auto;
+
+}
+.login-btn{
+    background-color: #681706 !important;
+    color: white;
+    border-radius: 0.9rem !important;
+    font: 15px arial, sans-serif;
+    font-weight: bold;
+    padding-bottom: 4%;
+}
+.remember, .forgotDiv{
+    margin: 0 auto;
+}
+.signUp{
+    color:#681706 !important;
+}
+///////////////////////
 #app{
     min-height:100vh;
     //display: flex;
@@ -47,7 +103,7 @@ li {
         background-color: rgba(	158,	199,	228, 0.3)!important;
     }
     .navbar-nav{
-        margin-left: 40rem;
+        //margin-left: 40rem;
     }
 
 .nav-link, .nav-item-logout{
@@ -137,9 +193,42 @@ li {
     border-radius: 1rem!important;
     margin-top: 80px;
 }
-.profile-card{
-    margin-top:5rem;
+//.profile-card{
+//    margin-top:5rem;
+//}
+
+
+//////profile card
+.profile-card, .donation-card{
+    width:80%;
+    margin: 2% auto;
+    float: none;
 }
+.profile-card-top, .donation-card-top{
+    background-color: rgba(	158,	199,	228, 0.3)!important;
+}
+//////
+
+///////donation/////
+#category-select-city, #category, #des {
+    border: 1px solid #9EC7E4 !important;
+    border-radius: 5px !important;
+    /*width: 400px;*/
+}
+.btn-save{
+    background-color: #AC2020;
+    color: white;
+    width: 30%;
+}
+.btn-save:hover, .goback:hover{
+    color: #9EC7E4;
+    font-weight:bold;
+    transform: translateY(-2px);
+    transition: transform 10ms linear;
+    //background-color:rgba(172, 32, 32, 0.3);
+
+}
+/////////////
 
 
 
@@ -169,10 +258,7 @@ li {
     color:white;
     background-color: #AC2020!important;
 }
-.vl {
-    border-left: 4px solid #AC2020;
-    height: 500px;
-}
+
 .footer{
 background-color: rgba(158, 199, 228, 0.3) !important;
     //min-height: 100vh!important;

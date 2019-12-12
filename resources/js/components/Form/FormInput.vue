@@ -20,7 +20,7 @@
                 v-on:input="$emit('inputData', $event.target.value)"
                 style=" border: 1px solid #9EC7E4!important;
                         border-radius:5px!important;
-                        width: 400px;">
+                        ">
     </div>
 </template>
 <script>

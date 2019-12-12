@@ -64,7 +64,7 @@
 
 
                 </div>
-                <div class="col-md-1 vl"></div>
+                <!--<div class="col-md-1 vl"></div>-->
                 <div class="col-md-4">
                     <form-input
                         :labelClass="'form-label'"
@@ -81,22 +81,26 @@
                     <datetime id="date-selection" v-model="form.birth_date" v-on:inputData="updateBirthDate" :labelClass="'form-label'"
                               :inputClass="'form-control'"
                               :placeholder="'Choose birth date'"style=" border: 1px solid #9EC7E4 !important;
-                                border-radius: 5px !important;
-                                 width: 400px;">
+                                border-radius: 5px!important">
 
                     </datetime>
+                    <div class="cityGender">
                     <label for="category-select-city">City</label>
                     <v-select id="category-select-city" label="name" v-model="form.selectedCity"
                               :options="city" v-on:inputData="updateCity"
                               v-on:search="searchCity">
                     </v-select>
+                    </div>
+                    <div class="cityGender">
                     <label for="gender-selection">Gender</label>
                     <v-select id="gender-selection" label="name" v-model="form.selectedGender" v-on:inputData="updateGender"
                               :options="['Male', 'Female']" >
                     </v-select>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-block mt-5 btn-save">Save</button>
-
+                <div class="col-md-12">
+                    <button type="submit" class="link-style btn btn-sm mt-3 float-right btn-save">Save</button>
+                </div>
             </div>
         </div>
 
@@ -263,16 +267,22 @@
 
     </script>
 <style>
-    #category-select-city, #category-select-country, #gender-selection{
+    #category-select-city, #gender-selection{
         border: 1px solid #9EC7E4 !important;
         border-radius: 5px !important;
-        width: 400px;
+        /*width: 400px;*/
     }
     .btn-save{
         background-color: #AC2020;
         color: white;
-        width: 30%;
-        margin: 10% auto 0 70%;
+        width:20%;
     }
+    .cityGender{
+        margin-top:6%;
+    }
+    /*.crta{*/
+        /*border-right: 4px solid #AC2020;*/
+        /*max-height: 300px;*/
+    /*}*/
 
 </style>

@@ -81,3 +81,11 @@
     </div>
 </body>
 </html>
+<style>
+    #app{
+        background-image: url("https://images.squarespace-cdn.com/content/v1/57ff6b30bebafba9d10c7dcd/1525359279134-468L7CWKRQ5Y8FCWMYB8/ke17ZwdGBToddI8pDm48kBNRt0cg4WAanfWojlHLplx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1US6IfA3z_hZ3gTROHXzj40oiauNtBL88ZRQhKg2xy4MQPt_AAiqPvsV6TvkS6kIncw/Irish+Charities?format=1500w");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height:100vh;
+    }
+</style>

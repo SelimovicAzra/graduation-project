@@ -2,7 +2,7 @@
     <form v-on:submit.prevent="submitForm" enctype="multipart/form-data">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <form-image :imageUrl="form.image"
                                 v-on:imageUpload="updateImage"
                                 :placeholder="'https://cdn0.iconfinder.com/data/icons/basic-outline/64/icon-basic-set_12-camera-512.png'"
@@ -12,8 +12,7 @@
                                 refId="imageID"
                     ></form-image>
                 </div>
-                <div class="col-md-2 vl"></div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <form-input
                         :labelClass="'form-label'"
                         :inputClass="'form-control'"
@@ -49,9 +48,9 @@
 
                 </div>
 
-
-                <button type="submit" class="btn btn-block mt-5 btn-save">Save</button>
-
+                <div class="col-md-12">
+                <button type="submit" class="link-style btn btn-sm mt-3 float-right btn-save">Save</button>
+                </div>
             </div>
         </div>
 
@@ -216,17 +215,5 @@
 
 </script>
 <style>
-    #category-select-city, #category, #des {
-        border: 1px solid #9EC7E4 !important;
-        border-radius: 5px !important;
-        width: 400px;
-    }
-
-    .btn-save{
-        background-color: #AC2020;
-        color: white;
-        width: 30%;
-        margin: 10% auto 0 70%;
-    }
 
 </style>
