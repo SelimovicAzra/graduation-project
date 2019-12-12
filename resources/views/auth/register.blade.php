@@ -67,8 +67,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="form-group row mb-0 divButton">
+                            <div class="col-md-6">
                                 <button type="submit" class="btn btn-block signup-btn">
                                     {{ __('Register') }}
                                 </button>
@@ -76,9 +76,9 @@
                         </div>
 
                         <div class="row login">
-                            <p>Already have an account </p>
+                            <p class="already">Already have an account </p>
                             @if (Route::has('login'))
-                                <a class="nav-link" style="padding-left:20px " href="{{ route('login') }}">{{ __('  Login') }} </a>
+                                <a class="nav-link " style="padding-left:20px " href="{{ route('login') }}">{{ __('  Login') }} </a>
                             @endif
 
 
@@ -140,9 +140,18 @@
             color:white;
             text-shadow: -1px 0 #9EC7E4, 0 1px #9EC7E4, 1px 0 #9EC7E4, 0 -1px #9EC7E4;
         }
-        .sign {
+        .login {
+            margin-top: 3%;
             justify-content: center;
         }
+        .divButton{
+            justify-content: center;
+        }  .nav-link{
+                color: #681706;
+            }
+           .already{
+               margin-top: 1%;
+           }
         }
 
 

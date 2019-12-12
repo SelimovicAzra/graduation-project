@@ -11637,3 +11637,11 @@ li {
   text-align: justify;
 }
 
+.signup-btn {
+  margin: 0 auto;
+  background-color: #681706 !important;
+  color: white;
+  font: 20px arial, sans-serif;
+  font-weight: bold;
+}
+

@@ -67,7 +67,7 @@
                         </div>
 {{--                        <div class="form-group row">--}}
                                 <div class="row sign">
-                                    <p>Don't have an account</p>
+                                    <p class="already">Don't have an account</p>
                                     @if (Route::has('register'))
                                             <a class="nav-link" style="padding-left:20px " href="{{ route('register') }}">{{ __('  Sign up') }} </a>
                                     @endif
@@ -134,6 +134,9 @@
             .sign {
              justify-content: center;
             }
+            .already{
+                margin-top: 1%;
+            }
 
         }
         @media (max-width: 1199px) {
@@ -147,6 +150,7 @@
             border: 1px solid #9EC7E4!important;
             border-radius: 1rem!important;
         }
+
 
     </style>
 @endpush
