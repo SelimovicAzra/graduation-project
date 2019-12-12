@@ -10,7 +10,7 @@
 @import '~cropperjs/src/css/cropper.scss';
 
 html{
-    background-color: rgba(	158,	199,	228, 0.3)!important;
+    background-color:white!important;
 
 }
 .card-login, .card-signup{
@@ -20,8 +20,13 @@ html{
 }
 
 #app{
+    min-height:100vh;
     //display: flex;
     background-color: white!important;
+}
+#content{
+    min-height:100vh;
+    background-color:white!important;
 }
 body{
     font-family: 'Lato', sans-serif !important;
