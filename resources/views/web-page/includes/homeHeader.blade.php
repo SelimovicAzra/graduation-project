@@ -24,7 +24,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">MY DONATIONS</a>
             </li>
-
+            @if(auth()->user()->admin==true)
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('cities.index')}}">CMS</a>
+            </li>
+            @endif
 
         </ul>
         @guest
@@ -40,7 +44,7 @@
             <li class="nav-item dropdown nav-item-logout">
                 <a id="navbarDropdown" class="nav-link-header dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->first_name }} <span class="caret"></span>
+                    {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
