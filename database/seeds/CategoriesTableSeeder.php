@@ -22,7 +22,13 @@ class CategoriesTableSeeder extends Seeder
             'name' => 'Food'
         ]);
         $category = Category::create([
-            'name' => 'Clothes'
+            'name' => 'Clothing'
+        ]);
+        $category = Category::create([
+            'name' => 'Electronic'
+        ]);
+        $category = Category::create([
+            'name' => 'Other'
         ]);
     }
 }

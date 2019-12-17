@@ -192,7 +192,7 @@
                             });
                             setTimeout(() => {
                                 let url = window.location.protocol + '//' + window.location.host;
-                                // window.location = url + '/donations';
+                                window.location = url + '/donations';
                             }, 1000)
                         }
                     });

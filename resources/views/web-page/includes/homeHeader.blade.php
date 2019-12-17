@@ -21,9 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('donations.index')}}">DONATIONS</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">MY DONATIONS</a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="{{route('my-donations')}}">MY DONATIONS</a>--}}
+{{--            </li>--}}
             @if(auth()->user()->admin==true)
             <li class="nav-item">
                 <a class="nav-link" href="{{route('cities.index')}}">CMS</a>

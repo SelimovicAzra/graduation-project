@@ -2383,7 +2383,8 @@ __webpack_require__.r(__webpack_exports__);
             title: 'Item successfully created'
           });
           setTimeout(function () {
-            var url = window.location.protocol + '//' + window.location.host; // window.location = url + '/donations';
+            var url = window.location.protocol + '//' + window.location.host;
+            window.location = url + '/donations';
           }, 1000);
         }
       });

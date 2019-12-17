@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WebPage;
 
 use App\Http\Controllers\Controller;
 use App\Models\Donation;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DonationController extends Controller
@@ -20,11 +21,20 @@ class DonationController extends Controller
             ->withDonation(Donation::all());
     }
 
+    public function userDonation(User $user)
+    {
+        $userDonation = $user->donation;
+        dd($userDonation);
+        return view('web-page.pages.userDonation.index')
+            ->withDonation();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
     }

@@ -48,6 +48,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\City', 'city_id');
     }
+    public function donations()
+    {
+        return $this->hasMany(Donation::class);
+    }
     public static function getFilters()
     {
         return [Filter::scope('term')];
