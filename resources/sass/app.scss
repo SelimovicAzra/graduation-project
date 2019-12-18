@@ -165,6 +165,10 @@ li {
     .nav-link i{
         padding-right:10px;
     }
+
+    .slider{
+        max-height: 100vh;
+    }
     .card-home{
         background-color: rgba(	158,	199,	228, 0.7)!important;
         height: 27vh;
@@ -259,11 +263,16 @@ li {
     background-color: #AC2020!important;
 }
 
-.footer{
-background-color: rgba(158, 199, 228, 0.3) !important;
-    //min-height: 100vh!important;
-    /*background-color: aqua!important;*/
-}
+//.footer {
+//    position: relative;
+//    left: 0;
+//    bottom: 0;
+//    background-color: rgba(158, 199, 228, 0.3) !important;
+//    width: 100%;
+//    color: white;
+//    text-align: center;
+//}
+
 
 .rowDonations{
     margin-top: 5%;

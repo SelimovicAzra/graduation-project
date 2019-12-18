@@ -12,8 +12,10 @@
         @yield('cards')
     </div>
 
+
 {{--    @include('web-page.includes.footer')--}}
-{{--    @include('web-page.includes.footer')--}}
+
+
 </div>
 @include('web-page.includes.foot')
 @stack('custom-js')
@@ -22,17 +24,17 @@
 <style>
     #app{
         background: white!important;
-        height: 100vh;
+        height: 100vh!important;
     }
     #content{
         /*background-color: rgba(223, 236, 245, 0.9)!important;*/
 
-        background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),  url("https://www.canadahelps.org/media/5-Reasons-Why-You-Should-Donate-to-Charity.jpg");
-        /*background-image: url("https://www.canadahelps.org/media/5-Reasons-Why-You-Should-Donate-to-Charity.jpg");*/
+        /*background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),  url("https://www.canadahelps.org/media/5-Reasons-Why-You-Should-Donate-to-Charity.jpg");*/
+        /*!*background-image: url("https://www.canadahelps.org/media/5-Reasons-Why-You-Should-Donate-to-Charity.jpg");*!*/
         /*background-repeat: no-repeat;*/
-        background-size: cover;
-        background-position-y: -110px;
-        height: 70vh;
+        /*background-size: cover;*/
+        /*min-height: 90vh;*/
+        min-height: 100vh!important;
     }
 
 

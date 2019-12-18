@@ -11578,6 +11578,10 @@ li {
   padding-right: 10px;
 }
 
+.slider {
+  max-height: 100vh;
+}
+
 .card-home {
   background-color: rgba(158, 199, 228, 0.7) !important;
   height: 27vh;
@@ -11686,11 +11690,6 @@ li {
 .goback {
   color: white;
   background-color: #AC2020 !important;
-}
-
-.footer {
-  background-color: rgba(158, 199, 228, 0.3) !important;
-  /*background-color: aqua!important;*/
 }
 
 .rowDonations {

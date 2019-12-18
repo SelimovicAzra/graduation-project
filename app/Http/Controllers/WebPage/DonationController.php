@@ -58,7 +58,7 @@ class DonationController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('web-page.pages.donation.show');
     }
 
     /**

@@ -12,8 +12,8 @@
                             <h4 class="card-title card-title-donation">{{$donation->item->name}}</h4>
                             <p class="card-text card-text-donation cardDonationDes">{{$donation->item->category->name}} - {{date('M d Y', strtotime($donation->item->created_at))}}</p>
                             {{--                        <p class="card-text card-text-donation card-des">{{$donation->item->description}}</p>--}}
-
-                            <button class="btn btn-primary donationButtons" type="submit"><a href="{{route('donations.show', $donation->item->id)}}"></a>Button</button>
+                            <a href="{{route('donations.show', $donation->item->id)}}">
+                            <button class="btn btn-primary donationButtons" type="submit">Show more</button></a>
                         </div>
                     </div>
                 </div>
