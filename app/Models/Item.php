@@ -20,5 +20,14 @@ class Item extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class);
     }
+    public function city()
+    {
+        return $this->belongsTo('App\Models\City', 'city_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
+
 
 }

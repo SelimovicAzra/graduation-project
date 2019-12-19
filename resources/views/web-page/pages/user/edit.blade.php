@@ -12,7 +12,7 @@
             <user-form
                 v-bind:user="{{$user}}"
 {{--                v-bind:roles="{{$roles}}"--}}
-{{--                image="{{$image}}"--}}
+                :image="'{{$image}}'"
                 :create="false"
 
             ></user-form>

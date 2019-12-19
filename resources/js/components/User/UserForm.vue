@@ -21,7 +21,7 @@
                         :type="'text'"
                         :labelFor="'Name'"
                         :placeholder="'Enter Name'"
-                        :required="'required'"
+
                         v-on:inputData="updateName"
                     ></form-input>
                     <form-input
@@ -32,7 +32,6 @@
                         :type="'text'"
                         :labelFor="'Email'"
                         :placeholder="'Enter email'"
-                        :required="'required'"
                         v-on:inputData="updateEmail"
                     ></form-input>
 <!--                    <button class="btn-success" v-on:click="show = true">Change Password</button>-->
@@ -74,7 +73,6 @@
                         :type="'text'"
                         :labelFor="'Phone Number'"
                         :placeholder="'Enter Phone Number'"
-                        :required="'required'"
                         v-on:inputData="updatePhoneNumber"
                     ></form-input>
                     <label for="date-selection">Birth Date</label>
@@ -261,7 +259,7 @@
             this.form.birth_date = birth_date.toISOString();
             this.form.phone_number = this.user.phone_number;
             this.form.selectedCity = this.user.city.name;
-            // this.form.image = this.image;
+            this.form.image = this.image;
         }
     }
 

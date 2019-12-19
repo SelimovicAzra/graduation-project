@@ -5,7 +5,7 @@
                 v-bind:for="labelFor">
             {{ title }}
         </label>
-        <textarea rows="5"
+        <textarea rows="1"
                   v-bind:class="inputClass"
                   v-bind:type="type"
                   v-bind:id="labelFor"

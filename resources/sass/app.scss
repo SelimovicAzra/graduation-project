@@ -63,13 +63,18 @@ html{
 .login-btn{
     background-color: #681706 !important;
     color: white;
-    border-radius: 0.9rem !important;
-    font: 15px arial, sans-serif;
+    border-radius: 1rem !important;
+    font: 17px arial, sans-serif;
     font-weight: bold;
-    padding-bottom: 4%;
 }
-.remember, .forgotDiv{
-    margin: 0 auto;
+.rememberDiv, .forgotDiv{
+    margin:0 auto;
+}
+.remember{
+    margin-top:5%;
+}
+.forgot{
+
 }
 .signUp{
     color:#681706 !important;
@@ -127,8 +132,10 @@ li {
     transition: width .3s;
 }
 
-.nav-link:hover::after, .nav-item-logout:hover::after {
+.active .nav-link:hover::after, .nav-item-logout:hover::after {
     width: 100%;
+    background-color: #666;
+    color: white;
 }
 
     .nav-logo{
@@ -309,7 +316,7 @@ li {
 
 .picDonation {
     width: 100%;
-    max-height:250px;
+    max-height:200px;
 }
 //.picDonation:hover{
 //    background-color: rgba(0, 0, 0, 0.99)!important;

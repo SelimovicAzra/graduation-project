@@ -23,7 +23,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 //item
 // Vue.component('item-index', require('./components/Item/ItemIndex').default);
 Vue.component('item-form', require('./components/Item/ItemForm').default);
-// Vue.component('item-details', require('./components/Item/ItemDetails').default);
+Vue.component('item-details', require('./components/Item/ItemDetails').default);
 //country
 Vue.component('country-details', require('./components/Country/CountryDetails').default);
 Vue.component('country-index', require('./components/Country/CountryIndex').default);

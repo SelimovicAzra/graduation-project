@@ -52,11 +52,13 @@
                                     {{ __('Login') }}
                                 </button>
                             </div>
-                                <div class="col-md-8 remember">
+                                <div class="col-md-8 rememberDiv">
+                                    <div class="remember">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember this device') }}
                                 </label>
+                                    </div>
                                 </div>
 
                             <div class="col-md-8 forgotDiv">

@@ -76,15 +76,28 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Item $item, Request $request)
     {
-        //
+        $user = $item->user;
+        $userImage = $item->user->getMedia('user-avatars')->first() ? $item->user->getMedia('user-avatars')->first()->getUrl() : '';
+//        dd($userImage);
+        $image = $item->getMedia('item-images')->first() ? $item->getMedia('item-images')->first()->getUrl() : '';
+        $city = $item->city;
+        $category = $item->category;
+        return view('web-page.pages.item.show')
+            ->withItem($item)
+            ->withCity($city)
+            ->withCategory($category)
+            ->withImage($image)
+            ->withUser($user)
+            ->withuserImage($userImage);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param EditItemRequest $request
+     * @param Item $item
      * @return \Illuminate\Http\Response
      */
     public function edit(EditItemRequest $request, Item $item)

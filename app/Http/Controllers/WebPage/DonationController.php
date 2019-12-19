@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WebPage;
 
 use App\Http\Controllers\Controller;
 use App\Models\Donation;
+use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -53,12 +54,19 @@ class DonationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Item $item
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Item $item)
     {
-        return view('web-page.pages.donation.show');
+//        dd($item);
+//        $city = $item->city;
+//        $category = $item->category;
+//        dd($category);
+////        dd($city);
+//        return view('web-page.pages.donation.show')
+//            ->withItem($item);
+////            ->withCity($city);
     }
 
     /**

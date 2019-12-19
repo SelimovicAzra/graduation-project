@@ -30,12 +30,12 @@ class UpdateUserRequest extends FormRequest
         return [
             'email' => 'sometimes|email',
             'name' => 'sometimes|string|max:50',
-            'password' => 'sometimes|string|min:8|confirmed',
-            'birth_date' => 'sometimes',
-            'gender' => 'sometimes',
-            'city_id' => 'sometimes',
-            'phone_number' => 'sometimes',
-            'image' => 'sometimes|image',
+            'password' => 'sometimes|string|min:8|confirmed|nullable',
+            'birth_date' => 'sometimes|nullable',
+            'gender' => 'sometimes|nullable',
+            'city_id' => 'sometimes|nullable',
+            'phone_number' => 'sometimes|nullable',
+            'image' => 'sometimes|image|nullable',
         ];
     }
 
