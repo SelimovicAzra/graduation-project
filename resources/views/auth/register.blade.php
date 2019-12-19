@@ -76,7 +76,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-8 email">
-                                    <button type="submit" class="btn btn-block signup-btn">
+                                    <button type="submit" class="btn btn-block login-btn">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
@@ -85,7 +85,7 @@
                             <div class="row login">
                                 <p class="already">Already have an account </p>
                                 @if (Route::has('login'))
-                                    <a class="nav-link "
+                                    <a class="nav-link signUp "
                                        href="{{ route('login') }}">{{ __('  Login') }} </a>
                                 @endif
 

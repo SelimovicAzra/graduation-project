@@ -11,7 +11,16 @@
 
 html{
     background-color:white!important;
-
+    min-height: 100vh !important;
+}
+#app{
+    min-height: 100vh!important;
+}
+#content{
+    min-height: 100vh!important;
+}
+body{
+    min-height: 100vh!important;
 }
 ///////login & register
 .card-login, .card-signup{
@@ -26,8 +35,23 @@ html{
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding-bottom: 3%;
-}
+    padding-bottom: 3%;}
+//@media (max-width:1440px){
+//    .logo{
+//                        max-width: 7%;
+//                        display: flex;
+//                        justify-content: center;
+//                        margin: 0 auto;
+//                        padding-bottom: 3%;
+//    }
+//    .card-login, .card-signup{
+//        min-width: 85vh;
+//        min-height: 80vh;
+//        margin-top: 5%;
+//        float:right;
+//        background-color:rgba(200, 200, 200, 0.5);
+//    }
+//}
 .titleLogin {
     display: flex;
     justify-content: center;
@@ -66,6 +90,9 @@ html{
     border-radius: 1rem !important;
     font: 17px arial, sans-serif;
     font-weight: bold;
+}
+.login-btn:hover{
+    color:greenyellow!important;
 }
 .rememberDiv, .forgotDiv{
     margin:0 auto;
@@ -140,7 +167,7 @@ li {
 
     .nav-logo{
         margin-left:20px;
-        width: 2.3rem;
+        width: 3.3rem;
     }
     .goodToShareNav{
         padding-top: 10px;

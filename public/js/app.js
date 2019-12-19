@@ -10968,7 +10968,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.card h5{\n    text-align:center;\n}\n.card{\n    border: 1px solid #9EC7E4!important;\n    border-radius: 1rem!important;\n    padding:10px;\n    margin-top:10px;\n}\n", ""]);
+exports.push([module.i, "\n.card h5{\n    text-align:center;\n}\n.card{\n    border: 1px solid #9EC7E4!important;\n    border-radius: 1rem!important;\n    padding:10px;\n    margin-top:10px;\n}\nimg{\n    max-width:100%!important;max-height:300px!important;margin:0 auto;\n    padding:10px;\n}\n", ""]);
 
 // exports
 
@@ -72628,8 +72628,8 @@ var render = function() {
           _vm._v(" "),
           _c("form-image", {
             staticStyle: {
-              "max-width": "500px",
-              "max-height": "300px",
+              "max-width": "500px!important",
+              "max-height": "300px!important",
               margin: "0 auto"
             },
             attrs: {

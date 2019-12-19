@@ -11396,6 +11396,19 @@ a.text-dark:focus {
 
 html {
   background-color: white !important;
+  min-height: 100vh !important;
+}
+
+#app {
+  min-height: 100vh !important;
+}
+
+#content {
+  min-height: 100vh !important;
+}
+
+body {
+  min-height: 100vh !important;
 }
 
 .card-login,
@@ -11465,6 +11478,10 @@ html {
   border-radius: 1rem !important;
   font: 17px arial, sans-serif;
   font-weight: bold;
+}
+
+.login-btn:hover {
+  color: greenyellow !important;
 }
 
 .rememberDiv,
@@ -11543,7 +11560,7 @@ li {
 
 .nav-logo {
   margin-left: 20px;
-  width: 2.3rem;
+  width: 3.3rem;
 }
 
 .goodToShareNav {

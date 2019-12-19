@@ -13,7 +13,7 @@
                 :type="'image'"
                 :labelFor="'name'"
                 disabled="disabled"
-                style="max-width:500px;max-height:300px;margin:0 auto;"
+                style="max-width:500px!important;max-height:300px!important;margin:0 auto;"
             ></form-image>
             <form-input
                 :labelClass="'form-label'"
@@ -155,5 +155,9 @@
         border-radius: 1rem!important;
         padding:10px;
         margin-top:10px;
+    }
+    img{
+        max-width:100%!important;max-height:300px!important;margin:0 auto;
+        padding:10px;
     }
 </style>
