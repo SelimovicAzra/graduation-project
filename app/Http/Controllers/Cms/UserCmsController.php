@@ -3,20 +3,31 @@
 namespace App\Http\Controllers\Cms;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-class CountryController extends Controller
+class UserCmsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
+//        dd('nesto');
+        return view('cms.pages.user.index');
 
     }
 
+    public function raw(Request $request)
+    {
+        $search = $request->search;
+        $users = User::filter()->paginate(10);
+        return UserResource::collection($users);
+    }
     /**
      * Show the form for creating a new resource.
      *

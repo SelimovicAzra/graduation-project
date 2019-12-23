@@ -3,11 +3,11 @@
     @include('cms.includes.head')
 </head>
 <body>
-<div id="app">
+<div id="app" class="cms-layout">
     @include('cms.includes.sidebar')
     @include('cms.includes.header')
 
-    <div id="content">
+    <div id="contentCms">
         @yield('content')
     </div>
 

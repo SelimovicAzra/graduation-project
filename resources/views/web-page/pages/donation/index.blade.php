@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row rowDonations">
             @foreach($donation as $donation)
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card cardsDonations">
                         <div class="card-block card-donation">
                             <img class="picDonation"

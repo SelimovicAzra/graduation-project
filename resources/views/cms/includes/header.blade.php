@@ -1,7 +1,7 @@
 
-<nav class="navbar navbar-expand-sm fixed-top navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-sm fixed-top navbar-light navbarCms">
     <div class="container">
-        <a class="navbar-brand navbar-white"><i class="fas fa-baby-carriage navbar-white"></i> 2-MAMA
+        <a class="navbar-brand navbar-white"><i class="fas fa-hands"></i> Good2Share
             {{--{{ config('app.name', 'Laravel') }}--}}
         </a>
 
@@ -29,15 +29,16 @@
                     </li>
                 @endif
             @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link-header dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->first_name }} <span class="caret"></span>
+                <li class="nav-item dropdown nav-item-logout">
+                    <a id="navbarDropdown" class="nav-link-header dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                         document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 

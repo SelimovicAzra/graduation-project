@@ -24,6 +24,7 @@ class UserController extends Controller
         return view('web-page.pages.user.edit');
     }
 
+
     /**
      * Show the form for creating a new resource.
      *

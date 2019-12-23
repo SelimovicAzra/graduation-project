@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Builder;
+
+use App\Http\Traits\Filterable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\QueryBuilder\Filter;
+use Illuminate\Database\Eloquent\Builder;
 
 class User extends Authenticatable implements HasMedia
 {
-    use Notifiable,HasMediaTrait;
+    use Notifiable,HasMediaTrait, Filterable;
 
     /**
      * The attributes that are mass assignable.
@@ -56,7 +57,7 @@ class User extends Authenticatable implements HasMedia
     }
     public static function getFilters()
     {
-        return [Filter::scope('term')];
+        return [Filter::scope( 'term')];
     }
     public function scopeTerm(Builder $query, $term): Builder
     {
@@ -67,7 +68,7 @@ class User extends Authenticatable implements HasMedia
     }
     public static function getIncludes()
     {
-//        return ['kids', 'roles', 'articles', 'therapy', 'city', 'kid-roles.roles', 'kid-roles.kid'];
+        return [''];
     }
 
     public static function getSorts()

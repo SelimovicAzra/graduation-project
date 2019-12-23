@@ -19,6 +19,8 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('pagination', require('laravel-vue-pagination'));
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //item
 // Vue.component('item-index', require('./components/Item/ItemIndex').default);
@@ -37,6 +39,7 @@ Vue.component('category-details', require('./components/Category/CategoryDetails
 //user
 Vue.component('user-form', require('./components/User/UserForm').default);
 
+Vue.component('user-cms-index', require('./components/UserCms/UserCmsIndex').default);
 //item
 Vue.component('donation-form', require('./components/Donation/DonationForm').default);
 
