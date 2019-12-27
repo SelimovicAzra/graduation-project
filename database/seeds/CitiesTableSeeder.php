@@ -15,7 +15,7 @@ class CitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        // $cities = factory(City::class, 10)->create();
+        // $cities = factory(CityCms::class, 10)->create();
 
         $file = (File::get(public_path().'/cities.txt'));
         foreach (explode("\n", $file) as $key=>$line){
@@ -162,7 +162,7 @@ class CitiesTableSeeder extends Seeder
         $city->save(); //Russia
 
         $city = new \App\Models\City();
-        $city->name = 'Mexico City';
+        $city->name = 'Mexico CityCms';
         $city->slug = generateSlug($city->name);
         $city->zip_code = '00810';
         $city->country_id = 10;
@@ -554,7 +554,7 @@ class CitiesTableSeeder extends Seeder
         $city->save(); //Zambia
 
         $city = new \App\Models\City();
-        $city->name = 'Guatemala City';
+        $city->name = 'Guatemala CityCms';
         $city->slug = generateSlug($city->name);
         $city->zip_code = '01001';
         $city->country_id = 66;
@@ -976,14 +976,14 @@ class CitiesTableSeeder extends Seeder
         $city->save(); //Mauritania
 
         $city = new \App\Models\City();
-        $city->name = 'Kuwait City';
+        $city->name = 'Kuwait CityCms';
         $city->slug = generateSlug($city->name);
         $city->zip_code = '54541';
         $city->country_id = 127;
         $city->save(); //Kuwait
 
         $city = new \App\Models\City();
-        $city->name = 'Panama City';
+        $city->name = 'Panama CityCms';
         $city->slug = generateSlug($city->name);
         $city->zip_code = '10801';
         $city->country_id = 128;
@@ -1414,7 +1414,7 @@ class CitiesTableSeeder extends Seeder
         $city->save(); //Liechtenstein
 
         $city = new \App\Models\City();
-        $city->name = 'City of San Marino';
+        $city->name = 'CityCms of San Marino';
         $city->slug = generateSlug($city->name);
         $city->zip_code = '91108';
         $city->country_id = 191;
@@ -1442,11 +1442,11 @@ class CitiesTableSeeder extends Seeder
         $city->save(); //Nauru
 
         $city = new \App\Models\City();
-        $city->name = 'Vatican City';
+        $city->name = 'Vatican CityCms';
         $city->slug = generateSlug($city->name);
         $city->zip_code = '00120';
         $city->country_id = 195;
-        $city->save(); //Vatican City
+        $city->save(); //Vatican CityCms
 
         $city = new \App\Models\City();
         $city->name = 'Pristina';

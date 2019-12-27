@@ -31,8 +31,8 @@ class CityCmsController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        $city = City::where('name','like','%'.$search.'%')->get();
-        return CityResource::collection($city);
+        $citiesCm = City::where('name','like','%'.$search.'%')->get();
+        return CityResource::collection($citiesCm);
     }
     public function raw(Request $request)
     {
@@ -54,38 +54,40 @@ class CityCmsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param StoreCityRequest $request
-     * @param City $city
+     * @param City $citiesCm
      * @return JsonResponse
      */
-    public function store(StoreCityRequest $request, City $city)
+    public function store(StoreCityRequest $request, City $citiesCm)
     {
+//        dd($request->all());
         $attributes = $request->validated();
         if($request['slug']==null){
             $attributes['slug'] = generateSlug($request['name']);
         }
         $attributes['country_id'] = $request->country_id;
-        $city->fill($attributes)->save();
-//        event(new CityCreatedEvent($city));
-        if($city){
-            return (new CityResource($city))
+        $citiesCm->fill($attributes)->save();
+//        event(new CityCreatedEvent($citiesCm));
+        if($citiesCm){
+            return (new CityResource($citiesCm))
                 ->response()
                 ->setStatusCode(200);
         }
-        return response()->json('Error while creating new city',422);
+        return response()->json('Error while creating new citiesCm',422);
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param City $city
+     * @param City $citiesCm
      * @return Response
      */
-    public function show(City $city)
+    public function show(City $citiesCm)
     {
-        $country = $city->country;
+        $country = $citiesCm->country;
+//        dd($country);
         return view('cms.pages.city.show')
-            ->withCity($city)
+            ->withCitiesCm($citiesCm)
             ->withCountry($country);
     }
 
@@ -93,14 +95,15 @@ class CityCmsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param EditCityRequest $request
-     * @param City $city
+     * @param City $citiesCm
      * @return Response
      */
-    public function edit(EditCityRequest $request, City $city)
+    public function edit(EditCityRequest $request, City $citiesCm)
     {
-        $existingCountry = $city->country;
+        $existingCountry = $citiesCm->country;
+//        dd($citiesCm);
         return  view('cms.pages.city.edit')
-            ->withCity($city)
+            ->withCitiesCm($citiesCm)
             ->withExistingCountry($existingCountry);
     }
 
@@ -108,27 +111,27 @@ class CityCmsController extends Controller
      * Update the specified resource in storage.
      *
      * @param UpdateCityRequest $request
-     * @param City $city
+     * @param City $citiesCm
      * @return void
      */
-    public function update(UpdateCityRequest $request, City $city)
+    public function update(UpdateCityRequest $request, City $citiesCm)
     {
         $attributes = $request->validated();
-        $city->update($attributes);
-//        event(new CityUpdatedEvent($city));
+        $citiesCm->update($attributes);
+//        event(new CityUpdatedEvent($citiesCm));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param City $city
+     * @param City $citiesCm
      * @return Response
      * @throws Exception
      */
-    public function destroy(City $city)
+    public function destroy(City $citiesCm)
     {
-        $city->delete();
-//        event(new CityDeletedEvent($city));
-        return response()->json(['status' => 'City successfully deleted'],200);
+        $citiesCm->delete();
+//        event(new CityDeletedEvent($citiesCm));
+        return response()->json(['status' => 'CityCms successfully deleted'],200);
     }
 }

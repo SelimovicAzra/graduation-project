@@ -124,6 +124,6 @@ class CityController extends Controller
     {
         $city->delete();
         event(new CityDeletedEvent($city));
-        return response()->json(['status' => 'City successfully deleted'],200);
+        return response()->json(['status' => 'CityCms successfully deleted'],200);
     }
 }

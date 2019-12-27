@@ -16,7 +16,7 @@
                 <a class="nav-link" href="{{route('profile',auth()->user()->id)}}">PROFILE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('items.create')}}">Donate</a>
+                <a class="nav-link" href="{{route('items.create')}}">DONATE</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('donations.index')}}">DONATIONS</a>

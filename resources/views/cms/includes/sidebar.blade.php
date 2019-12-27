@@ -16,16 +16,19 @@
                      </li>
                         <li class="nav-title">Management</li>
                      <li class="nav-item sidebarItem">
-                             <a class="nav-link sidebarLink" href="{{route('users.index')}}"><i class="fas fa-users"></i>  Users</a>
+                             <a class="nav-link sidebarLink" href="{{route('usersCms.index')}}"><i class="fas fa-users"></i>  Users</a>
                          </li>
                      <li class="nav-item sidebarItem">
-                         <a class="nav-link sidebarLink" {{--href="{{route('')}}"--}}><i class="fas fa-clipboard-list"></i>  Donations</a>
+                         <a class="nav-link sidebarLink" href="{{route('itemsCms.index')}}"><i class="fas fa-clipboard-list"></i>  Donations</a>
                      </li>
                      <li class="nav-item sidebarItem">
-                         <a class="nav-link sidebarLink" {{--href="{{route('')}}"--}}><i class="fas fa-city"></i>  Countries</a>
+                         <a class="nav-link sidebarLink" href="{{route('categoriesCms.index')}}"><i class="far fa-newspaper"></i>  Categories</a>
                      </li>
                      <li class="nav-item sidebarItem">
-                         <a class="nav-link sidebarLink" {{--href="{{route('')}}"--}}><i class="fas fa-building"></i>  Cities</a>
+                         <a class="nav-link sidebarLink" href="{{route('countriesCms.index')}}"><i class="fas fa-city"></i>  Countries</a>
+                     </li>
+                     <li class="nav-item sidebarItem">
+                         <a class="nav-link sidebarLink" href="{{route('citiesCms.index')}}"><i class="fas fa-building"></i>  Cities</a>
                      </li>
 
                      </ul>

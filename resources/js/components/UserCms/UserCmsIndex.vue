@@ -22,7 +22,7 @@
                         class="fas fa-sort-down"></i></span></th>
                     <th @click="sortBy('phone_number')">Phone<span class="sort"><i class="fas fa-sort-up"></i><i
                         class="fas fa-sort-down"></i></span></th>
-<!--                    <th @click="sortBy('city_id')">City<span class="sort"><i class="fas fa-sort-up"></i><i-->
+<!--                    <th @click="sortBy('city_id')">CityCms<span class="sort"><i class="fas fa-sort-up"></i><i-->
 <!--                        class="fas fa-sort-down"></i></span></th>-->
                     <th @click="sortBy('gender')">Gender<span class="sort"><i class="fas fa-sort-up"></i><i
                         class="fas fa-sort-down"></i></span></th>
@@ -45,10 +45,7 @@
                                 <i class="fas fa-search"></i>
                                 Show
                             </button>
-                            <button v-on:click="editUser(user.id)" class="btn btn-sm btn-primary mr-1">
-                                <i class="fas fa-pencil-alt"></i>
-                                Edit
-                            </button>
+
                             <button v-on:click="deleteUser(user.id)" class="btn btn-sm btn-danger">
                                 <i class="fas fa-trash"></i>
                                 Delete
@@ -100,13 +97,9 @@
             },
             showUser(id){
                 let url = window.location.protocol + '//' + window.location.host;
-                window.location = url + '/users/' + id + "?include=kids,roles";
+                window.location = url + '/usersCms/' + id;
             },
-            editUser(id) {
-                let url = window.location.protocol + '//' + window.location.host;
-                window.location = url + '/users/' + id + '/edit'+ "?include=kids,roles";
-            },
-            deleteUser(id) {
+            deleteUser(id){
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",
@@ -117,15 +110,13 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        axios.delete('users/' + id)
+                        axios.delete('usersCms/' + id)
                             .then(response => {
-                                console.log(response, "response");
-
+                                console.log(response);
                                 let index = this.users.data.map(users => {
                                     return users.id;
                                 }).indexOf(id);
                                 this.users.data.splice(index, 1)
-
                             }).catch(error => {
                             Swal.fire({
                                 type: 'error',
@@ -141,6 +132,7 @@
                     }
                 });
             },
+
             sortBy(prop) {
                 if (this.sort === prop) {
                     this.dir = this.dir === '' ? '-' : ''
@@ -158,3 +150,6 @@
         }
     }
 </script>
+<style>
+
+</style>

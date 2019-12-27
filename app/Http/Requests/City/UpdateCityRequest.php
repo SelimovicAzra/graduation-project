@@ -16,7 +16,7 @@ class UpdateCityRequest extends FormRequest
     public function authorize()
     {
         // return $this->user()->can('update', $this->route('city'));
-        
+
         $city = Auth::user();
         return $city;
     }
@@ -46,7 +46,7 @@ class UpdateCityRequest extends FormRequest
         return [
             'name.required' => 'Name is required!',
             'slug.required' => 'Slug is required!',
-            'country_id.required' => 'Country id address code is required!',
+            'country_id.required' => 'CountryCms id address code is required!',
             'zip_code.required' => 'Zip code address code is required!',
         ];
     }

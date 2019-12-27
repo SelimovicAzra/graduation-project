@@ -7,6 +7,7 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Spatie\MediaLibrary\Models\Media;
 
 class UserCmsController extends Controller
 {
@@ -57,7 +58,16 @@ class UserCmsController extends Controller
      */
     public function show($id)
     {
-        //
+        $image= " ";
+        $user = User::filter()->find($id);
+        if(!$image) {
+            $image = $user->getMedia('user-avatars')->first() ? $user->getMedia('user-avatars')->first()->getUrl() : '';
+        }
+        $city = $user->city;
+        return view('cms.pages.user.show')
+            ->withUser($user)
+            ->withCity($city)
+            ->withImage($image);
     }
 
     /**

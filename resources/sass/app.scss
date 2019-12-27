@@ -39,22 +39,7 @@ body{
     justify-content: center;
     margin: 0 auto;
     padding-bottom: 3%;}
-//@media (max-width:1440px){
-//    .logo{
-//                        max-width: 7%;
-//                        display: flex;
-//                        justify-content: center;
-//                        margin: 0 auto;
-//                        padding-bottom: 3%;
-//    }
-//    .card-login, .card-signup{
-//        min-width: 85vh;
-//        min-height: 80vh;
-//        margin-top: 5%;
-//        float:right;
-//        background-color:rgba(200, 200, 200, 0.5);
-//    }
-//}
+
 .titleLogin {
     display: flex;
     justify-content: center;
@@ -109,18 +94,12 @@ body{
 .signUp{
     color:#681706 !important;
 }
-///////////////////////
-//#appCms{
-//    min-height:100vh;
-//    display: flex;
-//    background-color: white!important;
-//}
+
 .cms-layout{
     min-height:100vh;
     display: flex;
     background-color: white!important;
 }
-
 #contentCms{
     //display: flex;
     flex-direction: row;
@@ -153,6 +132,8 @@ li {
     .navbarCms{
         max-height: 60px;
         background-color: transparent!important;
+        position:absolute!important;
+
     }
 .navbar-white{
     color: white!important;
@@ -409,4 +390,24 @@ li {
     color:white;
     font: 20px arial, sans-serif;
     font-weight: bold;
+}
+
+thead > tr > th:hover {
+    cursor: pointer;
+}
+
+.sort {
+    position: relative;
+}
+
+.fa-sort-up {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.fa-sort-down {
+    top: 3px;
+    left: 2px;
+    position: absolute;
 }

@@ -66,7 +66,7 @@ class CountryCmsController extends Controller
         $attributes = $request->validated();
         $country = new Country();
         $country->fill($attributes)->save();
-        event(new CountryCreatedEvent($country));
+       // event(new CountryCreatedEvent($country));
         if ($country) {
             return (new CountryResource($country))
                 ->response()
@@ -112,7 +112,7 @@ class CountryCmsController extends Controller
     {
         $attributes = $request->validated();
         $country->update($attributes);
-        event(new CountryUpdatedEvent($country));
+        //event(new CountryUpdatedEvent($country));
 
     }
 
@@ -127,7 +127,7 @@ class CountryCmsController extends Controller
     public function destroy(DeleteCountryRequest $request, Country $country)
     {
         $country->delete();
-        event(new CountryDeletedEvent($country));
-        return response()->json(['status' => 'Country successfully deleted'], 200);
+       // event(new CountryDeletedEvent($country));
+        return response()->json(['status' => 'CountryCms successfully deleted'], 200);
     }
 }

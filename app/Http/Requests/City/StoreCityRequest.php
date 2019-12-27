@@ -43,7 +43,7 @@ class StoreCityRequest extends FormRequest
         return [
             'name.required' => 'Name is required!',
             'slug.required' => 'Slug is required!',
-            'country_id.required' => 'Country id is required!',
+            'country_id.required' => 'CountryCms id is required!',
             'zip_code.required' => 'Zip code is required!',
         ];
     }

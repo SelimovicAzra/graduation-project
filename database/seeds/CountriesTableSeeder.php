@@ -13,7 +13,7 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //  $countries = factory(Country::class, 10)->create();
+        //  $countries = factory(CountryCms::class, 10)->create();
 
         $countries = array(
             array(
@@ -137,7 +137,7 @@ class CountriesTableSeeder extends Seeder
                 'id' => 10,
                 'name' => 'Mexico',
                 'calling_code' => '52',
-                'capital' => 'Mexico City',
+                'capital' => 'Mexico CityCms',
                 'code' => 'mx',
                 'code_alpha3' => 'mex',
                 'currency_code' => 'MXN',
@@ -866,7 +866,7 @@ class CountriesTableSeeder extends Seeder
                 'id' => 66,
                 'name' => 'Guatemala',
                 'calling_code' => '502',
-                'capital' => 'Guatemala City',
+                'capital' => 'Guatemala CityCms',
                 'code' => 'gt',
                 'code_alpha3' => 'gtm',
                 'currency_code' => 'GTQ',
@@ -1673,7 +1673,7 @@ class CountriesTableSeeder extends Seeder
                 'id' => 127,
                 'name' => 'Kuwait',
                 'calling_code' => '965',
-                'capital' => 'Kuwait City',
+                'capital' => 'Kuwait CityCms',
                 'code' => 'kw',
                 'code_alpha3' => 'kwt',
                 'currency_code' => 'KWD',
@@ -1687,7 +1687,7 @@ class CountriesTableSeeder extends Seeder
                 'id' => 128,
                 'name' => 'Panama',
                 'calling_code' => '507',
-                'capital' => 'Panama City',
+                'capital' => 'Panama CityCms',
                 'code' => 'pa',
                 'code_alpha3' => 'pan',
                 'currency_code' => 'PAB',
@@ -2531,7 +2531,7 @@ class CountriesTableSeeder extends Seeder
                 'id' => 191,
                 'name' => 'San Marino',
                 'calling_code' => '378',
-                'capital' => 'City of San Marino',
+                'capital' => 'CityCms of San Marino',
                 'code' => 'sm',
                 'code_alpha3' => 'smr',
                 'currency_code' => 'EUR',
@@ -2584,15 +2584,15 @@ class CountriesTableSeeder extends Seeder
 
             array (
                 'id' => 195,
-                'name' => 'Vatican City State',
+                'name' => 'Vatican CityCms State',
                 'calling_code' => '3906698',
-                'capital' => 'Vatican City',
+                'capital' => 'Vatican CityCms',
                 'code' => 'va',
                 'code_alpha3' => 'vat',
                 'currency_code' => 'EUR',
                 'currency_name' => 'Euro',
                 'emoji' => '🇻🇦',
-                'full_name' => 'Vatican City State',
+                'full_name' => 'Vatican CityCms State',
                 'top_level_domain' => '.va',
             ),
 

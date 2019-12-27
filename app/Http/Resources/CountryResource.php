@@ -29,7 +29,7 @@ class CountryResource extends JsonResource
             'full_name' => $this->full_name,
             'top_level_domain' => $this->top_level_domain,
             'cities' => CityResource::collection($this->whenLoaded('cities')),
-            'medicines' => MedicineResource::collection($this->whenLoaded('medicines')),
+
             'created_at' =>$this->created_at
         ];
     }

@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-//        $category = factory(Category::class,10)->create();
+//        $category = factory(CategoryCms::class,10)->create();
         $category = Category::create([
             'name' => 'Money'
         ]);

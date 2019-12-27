@@ -210,10 +210,13 @@
                 formData.append('email', this.form.email);
                 formData.append('phone_number', this.form.phone_number);
                 formData.append('birth_date', moment(this.form.birth_date).format('Y-M-D H:mm:ss'));
-                if (this.create) {
-                    formData.append('city_id', newCity);
-                } else {
+                // if (this.create) {
+                //     formData.append('city_id', newCity);
+                // } else {
                     console.log(this.form.selectedCity.id, 'ovo');
+                    if(this.form.selectedCity.id===undefined){
+                        formData.append('city_id', this.user.city_id);
+                    }else{
                     let cityEdit = this.form.selectedCity.id;
                     formData.append('city_id', cityEdit);
                 }
@@ -243,7 +246,7 @@
                             console.log(response.data.data.id);
                             setTimeout(() => {
                                 let url = window.location.protocol + '//' + window.location.host;
-                                window.location = url + '/users/' + response.data.data.id + '/edit'+ "?include=kids,roles";
+                                window.location = url + '/users/' + response.data.data.id + '/edit';
                             }, 1000)
                         }
                     });

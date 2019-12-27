@@ -23,23 +23,29 @@ Vue.component('pagination', require('laravel-vue-pagination'));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //item
-// Vue.component('item-index', require('./components/Item/ItemIndex').default);
 Vue.component('item-form', require('./components/Item/ItemForm').default);
 Vue.component('item-details', require('./components/Item/ItemDetails').default);
 //country
-Vue.component('country-details', require('./components/Country/CountryDetails').default);
-Vue.component('country-index', require('./components/Country/CountryIndex').default);
+Vue.component('country-cms-details', require('./components/CountryCms/CountryCmsDetails').default);
+Vue.component('country-cms-index', require('./components/CountryCms/CountryCmsIndex').default);
+Vue.component('country-cms-form', require('./components/CountryCms/CountryCmsForm').default);
 //city
-Vue.component('city-details', require('./components/City/CityDetails').default);
-Vue.component('city-index', require('./components/City/CityIndex').default);
+Vue.component('city-cms-details', require('./components/CityCms/CityCmsDetails').default);
+Vue.component('city-cms-index', require('./components/CityCms/CityCmsIndex').default);
+Vue.component('city-cms-form', require('./components/CityCms/CityCmsForm').default);
 //category
-Vue.component('category-index', require('./components/Category/CategoryIndex').default);
-Vue.component('category-form', require('./components/Category/CategoryForm').default);
-Vue.component('category-details', require('./components/Category/CategoryDetails').default);
+Vue.component('category-cms-index', require('./components/CategoryCms/CategoryCmsIndex').default);
+Vue.component('category-cms-form', require('./components/CategoryCms/CategoryCmsForm').default);
+Vue.component('category-cms-details', require('./components/CategoryCms/CategoryCmsDetails').default);
 //user
 Vue.component('user-form', require('./components/User/UserForm').default);
 
 Vue.component('user-cms-index', require('./components/UserCms/UserCmsIndex').default);
+Vue.component('user-details', require('./components/UserCms/UserCmsDetails').default);
+
+Vue.component('item-cms-index', require('./components/ItemCms/ItemCmsIndex').default);
+Vue.component('item-cms-details', require('./components/ItemCms/ItemCmsDetals').default);
+
 //item
 Vue.component('donation-form', require('./components/Donation/DonationForm').default);
 

@@ -63,6 +63,7 @@ class User extends Authenticatable implements HasMedia
     {
         return $query->where('name', 'like', '%' . $term . '%')
             ->orWhere('email', 'like', '%' . $term . '%')
+            ->orWhere('gender', 'like', '%' . $term . '%')
             ->orWhere('phone_number', 'like', '%' . $term . '%')
             ->orWhere('created_at', 'like', '%' . $term . '%');
     }
@@ -73,6 +74,6 @@ class User extends Authenticatable implements HasMedia
 
     public static function getSorts()
     {
-        return ['created_at', 'first_name', 'last_name', 'phone_number', 'email'];
+        return ['created_at',  'name', 'phone_number', 'email', 'gender'];
     }
 }

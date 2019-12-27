@@ -15995,6 +15995,7 @@ li {
 .navbarCms {
   max-height: 60px;
   background-color: transparent !important;
+  position: absolute !important;
 }
 
 .navbar-white {
@@ -16264,5 +16265,25 @@ li {
   color: white;
   font: 20px arial, sans-serif;
   font-weight: bold;
+}
+
+thead > tr > th:hover {
+  cursor: pointer;
+}
+
+.sort {
+  position: relative;
+}
+
+.fa-sort-up {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.fa-sort-down {
+  top: 3px;
+  left: 2px;
+  position: absolute;
 }
 

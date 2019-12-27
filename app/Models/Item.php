@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use App\Http\Traits\Filterable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\QueryBuilder\Filter;
 
 class Item extends Model implements HasMedia
 {
@@ -28,6 +30,25 @@ class Item extends Model implements HasMedia
     {
         return $this->belongsTo('App\Models\User', 'user_id');
     }
+    public static function getFilters()
+    {
+        return [Filter::scope( 'term')];
+    }
+    public function scopeTerm(Builder $query, $term): Builder
+    {
+        return $query->where('name', 'like', '%' . $term . '%')
+            ->orWhere('description', 'like', '%' . $term . '%')
 
+            ->orWhere('created_at', 'like', '%' . $term . '%');
+    }
+    public static function getIncludes()
+    {
+        return [''];
+    }
+
+    public static function getSorts()
+    {
+        return ['created_at',  'name', 'description'];
+    }
 
 }

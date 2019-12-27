@@ -23,7 +23,7 @@ Route::group(['namespace' => 'Cms'], function () {
 Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/profile{user}', 'UserController@edit')->name('profile');
-    Route::get('/cities/search', 'CityCmsController@search')->name('city.search');
+    Route::get('/cities/search', 'CityController@search')->name('city.search');
 //    Route::get('/item{user}', 'DonationController@edit')->name('item');
     Route::get('/my-donations', 'DonationController@userDonation')->name('my-donations');
 
@@ -31,7 +31,7 @@ Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
 
         'users' => 'UserController',
         'donations' => 'DonationController',
-        'cities'=>'CityCmsController',
+        'cities'=>'CityController',
         'items' => 'ItemController',
 
 
@@ -44,18 +44,23 @@ Route::group(['namespace' => 'webPage', 'middleware' => 'auth'], function () {
 Route::group(['namespace' => 'Cms', 'middleware' => 'auth'], function () {
 
     Route::get('/usersCms/raw', 'UserCmsController@raw');
-    Route::get('/cities/raw', 'CityCmsController@raw')->name('city.raw');
-    Route::get('/countries/raw', 'CountryCmsController@raw')->name('country.raw');
+    Route::get('/itemsCms/raw', 'ItemCmsController@raw');
+    Route::get('/citiesCms/raw', 'CityCmsController@raw')->name('city.raw');
+    Route::get('/countriesCms/raw', 'CountryCmsController@raw')->name('country.raw');
+    Route::get('/categoriesCms/raw', 'CategoryCmsController@raw')->name('category.raw');
 
     //search functions
-    Route::get('/countries/search', 'CountryCmsController@search')->name('country.search');
-    Route::get('/cities/search', 'CityCmsController@search')->name('city.search');
+    Route::get('/countriesCms/search', 'CountryCmsController@search')->name('country.search');
+    Route::get('/citiesCms/search', 'CityCmsController@search')->name('city.search');
 
     Route::resources([
 
-        'cities' => 'CityCmsController',
-        'countries' => 'CountryCmsController',
-        'users'=>'UserCmsController'
+        'citiesCms' => 'CityCmsController',
+        'countriesCms' => 'CountryCmsController',
+        'usersCms'=>'UserCmsController',
+        'itemsCms' => 'ItemCmsController',
+        'categoriesCms' => 'CategoryCmsController',
+
 
 
     ]);

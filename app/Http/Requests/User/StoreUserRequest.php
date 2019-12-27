@@ -53,7 +53,7 @@ class StoreUserRequest extends FormRequest
             'last_name.required' => 'Last name is required!',
             'password.required' => 'Password is required!',
             'birth_date.required' => 'Birth date is required',
-            'city_id.required' => 'City id is required',
+            'city_id.required' => 'CityCms id is required',
             'phone_number.required' => 'Phone number isrequired',
         ];
     }
