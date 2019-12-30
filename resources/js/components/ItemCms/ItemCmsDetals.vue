@@ -11,7 +11,7 @@
                     :imageUrl="image"
                     :title="''"
                     :type="'image'"
-                    :labelFor="'name'"
+                    :labelFor="'image'"
                     disabled="disabled"
                     style="max-width:500px!important;max-height:300px!important;margin:0 auto;"
                 ></form-image>

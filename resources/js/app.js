@@ -46,8 +46,6 @@ Vue.component('user-details', require('./components/UserCms/UserCmsDetails').def
 Vue.component('item-cms-index', require('./components/ItemCms/ItemCmsIndex').default);
 Vue.component('item-cms-details', require('./components/ItemCms/ItemCmsDetals').default);
 
-//item
-Vue.component('donation-form', require('./components/Donation/DonationForm').default);
 
 //Vue Select
 import vSelect from 'vue-select'

@@ -99,8 +99,10 @@ class UserCmsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $usersCm)
     {
-        //
+        $usersCm->delete();
+//        event(new UserDeletedEvent($usersCm));
+        return response()->json(['status' => 'UserCMS successfully deleted'],200);
     }
 }

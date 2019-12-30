@@ -16,7 +16,10 @@
                   v-on:keyup="validate"
                   v-bind:value="value"
                   v-bind:disabled="disabled"
-                  v-on:input="$emit('inputData', $event.target.value)">
+                  v-on:input="$emit('inputData', $event.target.value)"
+                  style=" border: 1px solid #9EC7E4!important;
+                        border-radius:5px!important;
+                        ">
         </textarea>
     </div>
 </template>

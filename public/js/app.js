@@ -3498,6 +3498,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4109,9 +4112,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['city'],
@@ -4141,6 +4141,38 @@ __webpack_require__.r(__webpack_exports__);
     showUser: function showUser(id) {
       var url = window.location.protocol + '//' + window.location.host;
       window.location = url + '/itemsCms/' + id;
+    },
+    deleteItem: function deleteItem(id) {
+      var _this2 = this;
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.value) {
+          axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]('itemsCms/' + id).then(function (response) {
+            console.log(response);
+
+            var index = _this2.items.data.map(function (items) {
+              return items.id;
+            }).indexOf(id);
+
+            _this2.items.data.splice(index, 1);
+          })["catch"](function (error) {
+            Swal.fire({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!'
+            });
+          });
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        }
+      });
     },
     sortBy: function sortBy(prop) {
       if (this.sort === prop) {
@@ -76866,6 +76898,10 @@ var render = function() {
     _vm._v(" "),
     _c("textarea", {
       class: _vm.inputClass,
+      staticStyle: {
+        border: "1px solid #9EC7E4!important",
+        "border-radius": "5px!important"
+      },
       attrs: {
         rows: "1",
         type: _vm.type,
@@ -77323,7 +77359,7 @@ var render = function() {
               imageUrl: _vm.image,
               title: "",
               type: "image",
-              labelFor: "name",
+              labelFor: "image",
               disabled: "disabled"
             }
           }),
@@ -77651,7 +77687,25 @@ var render = function() {
                           [
                             _c("i", { staticClass: "fas fa-search" }),
                             _vm._v(
-                              "\n                                Show\n                            "
+                              "\n                            Show\n                        "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-sm btn-danger",
+                            on: {
+                              click: function($event) {
+                                return _vm.deleteItem(item.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "fas fa-trash" }),
+                            _vm._v(
+                              "\n                            Delete\n                        "
                             )
                           ]
                         )
@@ -78105,7 +78159,7 @@ var render = function() {
                 labelClass: "form-label",
                 inputClass: "form-control",
                 value: _vm.city.name,
-                title: "CityCms",
+                title: "City",
                 type: "text",
                 labelFor: "city",
                 disabled: "disabled"
@@ -93228,9 +93282,7 @@ Vue.component('user-form', __webpack_require__(/*! ./components/User/UserForm */
 Vue.component('user-cms-index', __webpack_require__(/*! ./components/UserCms/UserCmsIndex */ "./resources/js/components/UserCms/UserCmsIndex.vue")["default"]);
 Vue.component('user-details', __webpack_require__(/*! ./components/UserCms/UserCmsDetails */ "./resources/js/components/UserCms/UserCmsDetails.vue")["default"]);
 Vue.component('item-cms-index', __webpack_require__(/*! ./components/ItemCms/ItemCmsIndex */ "./resources/js/components/ItemCms/ItemCmsIndex.vue")["default"]);
-Vue.component('item-cms-details', __webpack_require__(/*! ./components/ItemCms/ItemCmsDetals */ "./resources/js/components/ItemCms/ItemCmsDetals.vue")["default"]); //item
-
-Vue.component('donation-form', __webpack_require__(/*! ./components/Donation/DonationForm */ "./resources/js/components/Donation/DonationForm.vue")["default"]); //Vue Select
+Vue.component('item-cms-details', __webpack_require__(/*! ./components/ItemCms/ItemCmsDetals */ "./resources/js/components/ItemCms/ItemCmsDetals.vue")["default"]); //Vue Select
 
 
 Vue.component('v-select', vue_select__WEBPACK_IMPORTED_MODULE_0___default.a);
@@ -93925,38 +93977,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CountryCmsIndex_vue_vue_type_template_id_b755e0e4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/Donation/DonationForm.vue":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/Donation/DonationForm.vue ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "resources/js/components/Donation/DonationForm.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 

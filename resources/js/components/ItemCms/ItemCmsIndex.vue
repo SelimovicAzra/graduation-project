@@ -20,12 +20,6 @@
                         class="fas fa-sort-down"></i></span></th>
                     <th @click="sortBy('description')">Email<span class="sort"><i class="fas fa-sort-up"></i><i
                         class="fas fa-sort-down"></i></span></th>
-<!--                    <th @click="sortBy('category')">Phone<span class="sort"><i class="fas fa-sort-up"></i><i-->
-<!--                        class="fas fa-sort-down"></i></span></th>-->
-<!--                    &lt;!&ndash;                    <th @click="sortBy('city_id')">CityCms<span class="sort"><i class="fas fa-sort-up"></i><i&ndash;&gt;-->
-<!--                    &lt;!&ndash;                        class="fas fa-sort-down"></i></span></th>&ndash;&gt;-->
-<!--                    <th @click="sortBy('gender')">Gender<span class="sort"><i class="fas fa-sort-up"></i><i-->
-<!--                        class="fas fa-sort-down"></i></span></th>-->
                     <th @click="sortBy('created_at')">Created At<span class="sort"><i class="fas fa-sort-up"></i><i
                         class="fas fa-sort-down"></i></span></th>
                     <th>Actions</th>
@@ -43,7 +37,10 @@
                                 <i class="fas fa-search"></i>
                                 Show
                             </button>
-
+                            <button v-on:click="deleteItem(item.id)" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
                         </div>
                     </th>
                 </tr>
@@ -95,6 +92,39 @@
             showUser(id){
                 let url = window.location.protocol + '//' + window.location.host;
                 window.location = url + '/itemsCms/' + id;
+            },
+            deleteItem(id){
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        axios.delete('itemsCms/' + id)
+                            .then(response => {
+                                console.log(response);
+                                let index = this.items.data.map(items => {
+                                    return items.id;
+                                }).indexOf(id);
+                                this.items.data.splice(index, 1)
+                            }).catch(error => {
+                            Swal.fire({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!',
+                            })
+                        });
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                });
             },
             sortBy(prop) {
                 if (this.sort === prop) {

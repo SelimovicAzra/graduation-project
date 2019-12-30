@@ -3,7 +3,7 @@
 {{--@section('content')--}}
 {{--    <div class="card shadow-sm profile-card">--}}
 {{--        <div class="card-header card-top">--}}
-{{--            <h5 class="d-inline"><strong>Donation</strong></h5>--}}
+{{--            <h5 class="d-inline"><strong>DonationCms</strong></h5>--}}
 {{--            <a href="{{ route('home') }}"><button class="link-style btn btn-sm float-right goback"><i class="fas fa-arrow-circle-left"></i> Go Back</button></a>--}}
 {{--        </div>--}}
 

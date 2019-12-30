@@ -53,21 +53,21 @@ class ItemCmsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show(Item $itemsCm)
     {
         $image = " ";
         $userImage = " ";
-        $user = $item->user;
+        $user = $itemsCm->user;
         if (!$userImage) {
-            $userImage = $item->user->getMedia('user-avatars')->first() ? $item->user->getMedia('user-avatars')->first()->getUrl() : '';
+            $userImage = $itemsCm->user->getMedia('user-avatars')->first() ? $itemsCm->user->getMedia('user-avatars')->first()->getUrl() : '';
         }
         if (!$image) {
-            $image = $item->getMedia('item-images')->first() ? $item->getMedia('item-images')->first()->getUrl() : '';
+            $image = $itemsCm->getMedia('item-images')->first() ? $itemsCm->getMedia('item-images')->first()->getUrl() : '';
         }
-        $city = $item->city;
-        $category = $item->category;
-        return view('web-page.pages.item.show')
-            ->withItem($item)
+        $city = $itemsCm->city;
+        $category = $itemsCm->category;
+        return view('cms.pages.item.show')
+            ->withItemsCm($itemsCm)
             ->withCity($city)
             ->withCategory($category)
             ->withImage($image)
@@ -104,8 +104,10 @@ class ItemCmsController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Item $itemsCm)
     {
-        //
+        $itemsCm->delete();
+//        event(new UserDeletedEvent($usersCm));
+        return response()->json(['status' => 'ItemCMS successfully deleted'],200);
     }
 }

@@ -15853,10 +15853,6 @@ html {
   min-height: 100vh !important;
 }
 
-#content {
-  min-height: 100vh !important;
-}
-
 body {
   min-height: 100vh !important;
 }
@@ -15967,11 +15963,6 @@ body {
   transition: margin-left 0.25s, margin-right 0.25s, width 0.25s, flex 0.25s, -webkit-box-flex 0.25s;
 }
 
-#content {
-  min-height: 100vh;
-  background-color: white !important;
-}
-
 body {
   font-family: "Lato", sans-serif !important;
   background: #000e23;
@@ -16035,6 +16026,10 @@ li {
 .nav-logo {
   margin-left: 20px;
   width: 3.3rem;
+}
+
+.navbar img {
+  margin: 0;
 }
 
 .goodToShareNav {
@@ -16122,8 +16117,7 @@ li {
 }
 
 #category-select-city,
-#category,
-#des {
+#category {
   border: 1px solid #9EC7E4 !important;
   border-radius: 5px !important;
   /*width: 400px;*/

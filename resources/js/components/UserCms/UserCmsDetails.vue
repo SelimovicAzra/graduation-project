@@ -50,7 +50,7 @@
                                     :labelClass="'form-label'"
                                     :inputClass="'form-control'"
                                     :value="city.name"
-                                    :title="'CityCms'"
+                                    :title="'City'"
                                     :type="'text'"
                                     :labelFor="'city'"
                                     disabled="disabled"
