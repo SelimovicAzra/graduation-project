@@ -9,7 +9,7 @@
         <img class="nav-logo" src="/images/logo.png">
         <p class="goodToShareNav">Good2Share</p>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('home')}}">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">

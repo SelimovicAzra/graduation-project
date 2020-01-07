@@ -16141,6 +16141,14 @@ li {
   transition: transform 10ms linear, -webkit-transform 10ms linear;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
+.cardDonationDes:hover {
+  text-decoration: none;
+}
+
 #sidebar-collapse {
   margin-right: 890px;
   border: 1px solid #DCDCDC;
@@ -16242,6 +16250,7 @@ li {
   transition: transform 150ms linear, -webkit-transform 150ms linear;
   box-shadow: 0 7px 6px rgba(0, 0, 0, 0.12), 0 14px 15px rgba(0, 0, 0, 0.12) !important;
   display: inline-block;
+  text-decoration: none;
 }
 
 .picDonation {
