@@ -10,8 +10,8 @@
 {{--                <div class="card-header">{{ __('Login') }}</div>--}}
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
-                        <div>
-                            <img class="logo" src="/images/logo.png" >
+                        <div class="logo">
+                            <img class="logoImg" src="/images/logo.png">
                         </div>
                         <div class="titleLogin">
                             <p>Good2Share</p>
@@ -54,7 +54,7 @@
                             </div>
                                 <div class="col-md-8 rememberDiv">
                                     <div class="remember">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember"  {{ old('remember') ? 'checked' : '' }}>
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember this device') }}
                                 </label>
@@ -69,7 +69,7 @@
                             @endif
                             </div>
 {{--                        <div class="form-group row">--}}
-                                <div class="row forgotDiv">
+                                <div class="row loginAlready">
                                     <p class="already">Don't have an account</p>
                                     @if (Route::has('register'))
                                             <a class="nav-link signUp"  href="{{ route('register') }}">{{ __('  Sign up') }} </a>

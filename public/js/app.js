@@ -77276,21 +77276,31 @@ var render = function() {
                 _vm._v("City")
               ]),
               _vm._v(" "),
-              _c("v-select", {
-                attrs: {
-                  id: "category-select-city",
-                  label: "name",
-                  options: _vm.city
-                },
-                on: { inputData: _vm.updateCity, search: _vm.searchCity },
-                model: {
-                  value: _vm.form.selectedCity,
-                  callback: function($$v) {
-                    _vm.$set(_vm.form, "selectedCity", $$v)
+              _c(
+                "v-select",
+                {
+                  attrs: {
+                    id: "category-select-city",
+                    label: "name",
+                    options: _vm.city
                   },
-                  expression: "form.selectedCity"
-                }
-              })
+                  on: { inputData: _vm.updateCity, search: _vm.searchCity },
+                  model: {
+                    value: _vm.form.selectedCity,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "selectedCity", $$v)
+                    },
+                    expression: "form.selectedCity"
+                  }
+                },
+                [
+                  _c(
+                    "span",
+                    { attrs: { slot: "no-options" }, slot: "no-options" },
+                    [_vm._v("Search for city...")]
+                  )
+                ]
+              )
             ],
             1
           ),
@@ -77978,21 +77988,31 @@ var render = function() {
                     _vm._v("City")
                   ]),
                   _vm._v(" "),
-                  _c("v-select", {
-                    attrs: {
-                      id: "category-select-city",
-                      label: "name",
-                      options: _vm.city
-                    },
-                    on: { inputData: _vm.updateCity, search: _vm.searchCity },
-                    model: {
-                      value: _vm.form.selectedCity,
-                      callback: function($$v) {
-                        _vm.$set(_vm.form, "selectedCity", $$v)
+                  _c(
+                    "v-select",
+                    {
+                      attrs: {
+                        id: "category-select-city",
+                        label: "name",
+                        options: _vm.city
                       },
-                      expression: "form.selectedCity"
-                    }
-                  })
+                      on: { inputData: _vm.updateCity, search: _vm.searchCity },
+                      model: {
+                        value: _vm.form.selectedCity,
+                        callback: function($$v) {
+                          _vm.$set(_vm.form, "selectedCity", $$v)
+                        },
+                        expression: "form.selectedCity"
+                      }
+                    },
+                    [
+                      _c(
+                        "span",
+                        { attrs: { slot: "no-options" }, slot: "no-options" },
+                        [_vm._v("Search for city...")]
+                      )
+                    ]
+                  )
                 ],
                 1
               ),

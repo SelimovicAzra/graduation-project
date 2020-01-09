@@ -29,36 +29,46 @@ body{
 .card-login, .card-signup{
     min-width: 90vh;
     min-height: 80vh;
-    margin-top: 5%;
+    margin-top: 2%;
     float:right;
     background-color:rgba(200, 200, 200, 0.5);
 }
-.logo{
-    max-width: 10%;
+.logoImg{
+    max-width: 13%!important;
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding-bottom: 3%;}
+}
+.logo{
+    margin: 0 auto;
+}
 
 .titleLogin {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    font: 1.5rem arial, sans-serif;
+    font: 1.4rem arial, sans-serif;
     font-weight: bold;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
-
+.py-4{
+    padding-top:1%!important;
+}
 .login-title {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    font: 2.5rem arial, sans-serif;
+    font: 2.1rem arial, sans-serif;
     font-weight: bold;
     color: white;
     text-shadow: -1px 0 #9EC7E4, 0 1px #9EC7E4, 1px 0 #9EC7E4, 0 -1px #9EC7E4;
-    padding-bottom: 8%;
+    padding-bottom: 5%;
+}
+.loginAlready{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 .email, .password {
     display: flex;
@@ -80,19 +90,22 @@ body{
     font-weight: bold;
 }
 .login-btn:hover{
-    color:greenyellow!important;
+    color:rgba(158,169,177, 0.9)!important;
 }
 .rememberDiv, .forgotDiv{
-    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 .remember{
-    margin-top:5%;
+   margin-top:7%;
 }
 .forgot{
 
 }
 .signUp{
     color:#681706 !important;
+    padding-top:0;
 }
 
 .cms-layout{
@@ -147,8 +160,8 @@ li {
     color: #000;
     text-decoration: none;
     margin-right:30px;
-    padding-top:5px;
-    padding-left: 50px;
+    //padding-top:5px;
+    //padding-left: 50px;
     font-weight: bold;
     //text-transform: uppercase;
     font-family: "Barlow Semi Condensed", Helvetica, Verdana, sans-serif;

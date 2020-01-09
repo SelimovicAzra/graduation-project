@@ -41,7 +41,7 @@
                     <label for="category-select-city">City</label>
                     <v-select id="category-select-city" label="name" v-model="form.selectedCity"
                               :options="city" v-on:inputData="updateCity"
-                              v-on:search="searchCity">
+                              v-on:search="searchCity" ><span slot="no-options">Search for city...</span>
                     </v-select>
 
 

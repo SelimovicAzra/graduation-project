@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-12">
                     <div class="col-md-8"></div>
-                <div class="card col-md-4 mt-3 float-right card-login">
+                <div class="card col-md-4 float-right card-login">
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-                            <div class="col-md-8 offset-4 mr-0 mt-3">
-                                <img class="logo" src="/images/logo.png" style="margin-left:20px;">
+                            <div class="logo">
+                                <img class="logoImg" src="/images/logo.png">
                             </div>
                             <div class="titleLogin">
                                 <p>Good2Share</p>
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
 
-                            <div class="row login">
+                            <div class="row loginAlready">
                                 <p class="already">Already have an account </p>
                                 @if (Route::has('login'))
                                     <a class="nav-link signUp "
